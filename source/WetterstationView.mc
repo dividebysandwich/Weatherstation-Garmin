@@ -26,7 +26,7 @@ class WetterstationView extends WatchUi.View {
         View.onUpdate(dc);
         if (sd != null && sd.getData() != null && !sd.getData().isEmpty()) {
             var angle = Math.toRadians(sd.getCurWindDirection());
-            var windspeedkmh = sd.getCurWindSpeed().toFloat();
+            var windspeedkmh = sd.getCurWindGusts().toFloat();
             var arrowwidth = 240;
             var arrowheight = 240;
             var arrowimagewidth = 360;
@@ -46,19 +46,19 @@ class WetterstationView extends WatchUi.View {
     	        dc.setFill(Graphics.createColor(255, 50, 255, 50));
                 dc.setStroke(Graphics.createColor(255, 30, 230, 30));
             }
-            else if (windspeedkmh < 20)
+            else if (windspeedkmh < 10)
             {
                 thickness = 13;
     	        dc.setFill(Graphics.createColor(255, 80, 200, 50));
                 dc.setStroke(Graphics.createColor(255, 60, 180, 30));
             }
-            else if (windspeedkmh < 25)
+            else if (windspeedkmh < 15)
             {
                 thickness = 15;
     	        dc.setFill(Graphics.createColor(255, 170, 150, 50));
                 dc.setStroke(Graphics.createColor(255, 150, 130, 30));
             }
-            else if (windspeedkmh < 30)
+            else if (windspeedkmh < 20)
             {
                 thickness = 18;
     	        dc.setFill(Graphics.createColor(255, 185, 185, 50));
@@ -94,7 +94,7 @@ class WetterstationView extends WatchUi.View {
             dc.fillPolygon(coord);
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             dc.drawText(208, 360, Graphics.FONT_SYSTEM_TINY, sd.getCurTemperature()+" °C", Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(208, 10, Graphics.FONT_SYSTEM_TINY, sd.getCurWindSpeed()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(208, 10, Graphics.FONT_SYSTEM_TINY, sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
 
         }
     }

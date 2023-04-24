@@ -89,7 +89,7 @@ class WeatherData {
         return lastData.get("curwindspeed").format("%.1f");
     }
     public function getCurWindGusts() {
-        return lastData.get("curwindgusts").format("%.1f");
+        return lastData.get("curwindgust").format("%.1f");
     }
     public function getCurRain() {
         return lastData.get("currain").format("%.1f");

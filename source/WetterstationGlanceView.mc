@@ -50,9 +50,9 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                 var maxValue = 0.1;
                 var minValue = 0;
                 if (mode <= 2) {
-                    histogram = sd.getWindSpeedHistogram();
+                    histogram = sd.getWindGustsHistogram();
                     linecolor = Graphics.COLOR_YELLOW;
-                    curvalue = sd.getCurWindSpeed() + " km/h";
+                    curvalue = sd.getCurWindGusts() + " km/h";
                     gridInterval = 5;
                     maxValue = sd.getMaxValue(histogram);
                     if (maxValue < 30) {
