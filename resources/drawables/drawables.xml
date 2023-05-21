@@ -1,3 +1,7 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+    <bitmap id="SunIcon" filename="icon_sun.png" />
+    <bitmap id="RainIcon" filename="icon_rain.png" />
+    <bitmap id="CloudyIcon" filename="icon_cloudy.png" />
+    <bitmap id="WindyIcon" filename="icon_windy.png" />
 </drawables>

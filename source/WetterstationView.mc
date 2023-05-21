@@ -26,8 +26,8 @@ class WetterstationView extends WatchUi.View {
         View.onUpdate(dc);
         if (sd != null && sd.getData() != null && !sd.getData().isEmpty()) {
             var angle = Math.toRadians(sd.getCurWindDirection());
-            var windspeedkmh = sd.getCurWindGusts().toFloat();
-            var arrowwidth = 240;
+            var windspeedkmh = sd.getCurWindSpeed().toFloat();
+            var windgustkmh = sd.getCurWindGusts().toFloat();
             var arrowheight = 240;
             var arrowimagewidth = 360;
             var arrowimageheight = 360;
@@ -95,6 +95,10 @@ class WetterstationView extends WatchUi.View {
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             dc.drawText(208, 360, Graphics.FONT_SYSTEM_TINY, sd.getCurTemperature()+" °C", Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(208, 10, Graphics.FONT_SYSTEM_TINY, sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
+            if (windgustkmh > windspeedkmh + 10.0) {
+                dc.drawText(208, 37, Graphics.FONT_SYSTEM_TINY, "Gust "+sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
+
+            }
 
         }
     }
@@ -110,7 +114,7 @@ class WetterstationView extends WatchUi.View {
 
     }
 
-    function timerCallback() {
+    function timerCallback() as Void {
         sd.requestUpdate();
     }
 

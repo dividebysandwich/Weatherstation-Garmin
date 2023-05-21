@@ -28,6 +28,10 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                 }
                 sd.setMode(mode);
 
+//                if (sd.getCurRain().toFloat() > 0.0) {
+//                    GlanceView.setGlanceBitmap(GlanceView.findDrawableById("RainIcon"));
+//                }
+
                 // Create image buffer
                 var bitmapOpts = {
                     :width => dc.getWidth(),
@@ -179,7 +183,7 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
 
     }
 
-    function timerCallback() {
+    function timerCallback() as Void{
         sd.requestUpdate();
     }
 
