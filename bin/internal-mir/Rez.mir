@@ -1,0 +1,1202 @@
+[ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 2; ]
+using Toybox.WatchUi;
+[ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 3; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 4; ]
+using Toybox.Graphics;
+[ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 5; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 7; ]
+module Rez {
+    [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 8; ]
+    module Drawables {
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 9; @position = 27; initialized = true; ]
+        var SunIcon as Symbol;
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 10; @position = 27; initialized = true; ]
+        var RainIcon as Symbol;
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 11; @position = 27; initialized = true; ]
+        var CloudyIcon as Symbol;
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 12; @position = 27; initialized = true; ]
+        var WindyIcon as Symbol;
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 13; @position = 27; initialized = true; ]
+        var id_monkey as Symbol;
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 14; @position = 27; initialized = true; ]
+        var LauncherIcon as Symbol;
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 17; ]
+    module Fonts {
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 17; ]
+        <init> {
+        }
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 20; ]
+    module JsonData {
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 20; ]
+        <init> {
+        }
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 23; ]
+    module Layouts {
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 23; ]
+        <init> {
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 24; ]
+        function GlanceLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+E_Work_Weatherstation_Garmin_bin_gen_006_B4314_00_source_Rez_mcgen_24_76_start:
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 25 12 ]
+            [ "E_Work_Weatherstation_Garmin_bin_gen_006_B4314_00_source_Rez_mcgen_24_76_start" "E_Work_Weatherstation_Garmin_bin_gen_006_B4314_00_source_Rez_mcgen_24_76_stop" ]
+            %rez_cmp_local_bitmap_id_monkey.1 = local;
+            %tmp.3 = getm $.Toybox.WatchUi;
+            %tmp.4 = getv function ? %tmp.3 :Bitmap;
+            %tmp.5 = newd 4;
+            %tmp.7 = const :identifier;
+            %tmp.8 = "id_monkey";
+            %tmp.9 = dup %tmp.5;
+            %tmp.10 = aputv %tmp.9 %tmp.7 %tmp.8;
+            %tmp.12 = const :rezId;
+            %tmp.13 = getm $;
+            %tmp.14 = getv %tmp.13 :Rez;
+            %tmp.15 = getv %tmp.14 :Drawables;
+            %tmp.16 = getv %tmp.15 :id_monkey;
+            %tmp.17 = dup %tmp.10;
+            %tmp.18 = aputv %tmp.17 %tmp.12 %tmp.16;
+            %tmp.20 = const :locX;
+            %tmp.21 = 0;
+            %tmp.22 = dup %tmp.18;
+            %tmp.23 = aputv %tmp.22 %tmp.20 %tmp.21;
+            %tmp.25 = const :locY;
+            %tmp.26 = 0;
+            %tmp.27 = dup %tmp.23;
+            %tmp.28 = aputv %tmp.27 %tmp.25 %tmp.26;
+            %tmp.1 = newc %tmp.4 (%tmp.28);
+            lputv %rez_cmp_local_bitmap_id_monkey.1 %tmp.1;
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 27 12 ]
+            %tmp.29 = newa Array<WatchUi.Drawable> 1;
+            %tmp.31 = lgetv %rez_cmp_local_bitmap_id_monkey.1;
+            %tmp.32 = dup %tmp.29;
+            %tmp.33 = aputv %tmp.32 0 %tmp.31;
+            ret %tmp.33;
+E_Work_Weatherstation_Garmin_bin_gen_006_B4314_00_source_Rez_mcgen_24_76_stop:
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 30; ]
+        function MainLayout_Epix(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+E_Work_Weatherstation_Garmin_bin_gen_006_B4314_00_source_Rez_mcgen_30_79_start:
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 31 12 ]
+            %tmp.1 = newa Array<WatchUi.Drawable> 0;
+            ret %tmp.1;
+E_Work_Weatherstation_Garmin_bin_gen_006_B4314_00_source_Rez_mcgen_30_79_stop:
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 34; ]
+        function MainLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+E_Work_Weatherstation_Garmin_bin_gen_006_B4314_00_source_Rez_mcgen_34_74_start:
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 35 12 ]
+            %tmp.1 = newa Array<WatchUi.Drawable> 0;
+            ret %tmp.1;
+E_Work_Weatherstation_Garmin_bin_gen_006_B4314_00_source_Rez_mcgen_34_74_stop:
+        }
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 39; ]
+    module Menus {
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 39; ]
+        <init> {
+        }
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 42; ]
+    module Strings {
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 42; ]
+        <init> {
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 43; @position = 27; initialized = true; ]
+        var AppName as Symbol;
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 46; ]
+    module Styles {
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 46; ]
+        <init> {
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 47; ]
+        module system_size__menu_header {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 47; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 48; @position = 18; ]
+            const width as Number = 454;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 49; @position = 18; ]
+            const height as Number = 152;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 52; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 52; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 53; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__hint_button_left_bottom.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 54; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 57; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 57; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 58; @position = 18; ]
+            const x as Number = 17;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 59; @position = 18; ]
+            const y as Number = 300;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 62; ]
+        module prompt_loc__body_no_title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 62; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 63; @position = 18; ]
+            const x as Number = 38;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 64; @position = 18; ]
+            const y as Number = 38;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 67; ]
+        module system_icon_dark__about {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 67; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 68; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__about.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 69; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 70; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 71; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 74; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 74; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 75; @position = 18; ]
+            const x as Number = 393;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 76; @position = 18; ]
+            const y as Number = 300;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 79; ]
+        module confirmation_color_dark__body {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 79; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 81 18 ]
+                %tmp.2 = getm $.Toybox.Graphics;
+                %tmp.3 = getv %tmp.2 :COLOR_TRANSPARENT;
+                putv self :background %tmp.3;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 80; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 81; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 84; ]
+        module system_icon_light__question {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 84; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 85; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__question.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 86; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 89; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 89; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 90; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 93; ]
+        module prompt_font__title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 93; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 94 18 ]
+                %tmp.4 = getm $.Toybox.Graphics;
+                %tmp.5 = getv %tmp.4 :TEXT_JUSTIFY_CENTER;
+                %tmp.6 = getm $.Toybox.Graphics;
+                %tmp.7 = getv %tmp.6 :TEXT_JUSTIFY_VCENTER;
+                %tmp.8 = bitor %tmp.5 %tmp.7;
+                putv self :justification %tmp.8;
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 95 18 ]
+                %tmp.9 = getm $.Toybox.Graphics;
+                %tmp.10 = getv %tmp.9 :FONT_XTINY;
+                putv self :font %tmp.10;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 94; @position = 18; ]
+            const justification;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 95; @position = 18; ]
+            const font;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 98; ]
+        module system_icon_dark__discard {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 98; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 99; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__discard.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 100; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 101; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 102; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 105; ]
+        module system_size__menu_item {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 105; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 106; @position = 18; ]
+            const width as Number = 454;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 107; @position = 18; ]
+            const height as Number = 152;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 110; ]
+        module prompt_color_dark__title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 110; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 112 18 ]
+                %tmp.11 = getm $.Toybox.Graphics;
+                %tmp.12 = getv %tmp.11 :COLOR_TRANSPARENT;
+                putv self :background %tmp.12;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 111; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 112; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 115; ]
+        module system_icon_destructive__cancel {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 115; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 116; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_destructive__cancel.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 117; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 120; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 120; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 121; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__hint_button_right_bottom.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 122; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 125; ]
+        module system_color_dark__text {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 125; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 127 18 ]
+                %tmp.13 = getm $.Toybox.Graphics;
+                %tmp.14 = getv %tmp.13 :COLOR_TRANSPARENT;
+                putv self :background %tmp.14;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 126; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 127; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 130; ]
+        module system_icon_destructive__discard {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 130; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 131; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_destructive__discard.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 132; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 135; ]
+        module prompt_loc__title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 135; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 136; @position = 18; ]
+            const x as Number = 38;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 137; @position = 18; ]
+            const y as Number = 27;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 140; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 140; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 141; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__hint_button_right_top.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 142; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 145; ]
+        module prompt_color_light__title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 145; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 147 18 ]
+                %tmp.15 = getm $.Toybox.Graphics;
+                %tmp.16 = getv %tmp.15 :COLOR_TRANSPARENT;
+                putv self :background %tmp.16;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 146; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 147; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 150; ]
+        module prompt_size__title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 150; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 151; @position = 18; ]
+            const width as Number = 363;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 152; @position = 18; ]
+            const height as Number = 69;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 155; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 155; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 156; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__hint_button_right_top.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 157; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 160; ]
+        module confirmation_font__body {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 160; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 161 18 ]
+                %tmp.17 = getm $.Toybox.Graphics;
+                %tmp.18 = getv %tmp.17 :TEXT_JUSTIFY_CENTER;
+                %tmp.19 = getm $.Toybox.Graphics;
+                %tmp.20 = getv %tmp.19 :TEXT_JUSTIFY_VCENTER;
+                %tmp.21 = bitor %tmp.18 %tmp.20;
+                putv self :justification %tmp.21;
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 162 18 ]
+                %tmp.22 = getm $.Toybox.Graphics;
+                %tmp.23 = getv %tmp.22 :FONT_TINY;
+                putv self :font %tmp.23;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 161; @position = 18; ]
+            const justification;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 162; @position = 18; ]
+            const font;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 165; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 165; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 166; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__hint_button_left_middle.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 167; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 170; ]
+        module system_color_dark__background {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 170; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 171; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 172; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 175; ]
+        module system_icon_light__cancel {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 175; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 176; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__cancel.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 177; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 180; ]
+        module system_size__launch_icon {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 180; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 181; @position = 18; ]
+            const scaleX as Number = 60;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 182; @position = 18; ]
+            const scaleY as Number = 60;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 183; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 186; ]
+        module confirmation_input__confirm {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 186; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 187 18 ]
+                %tmp.24 = getm $.Toybox.WatchUi;
+                %tmp.25 = getv %tmp.24 :KEY_ENTER;
+                putv self :button %tmp.25;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 187; @position = 18; ]
+            const button;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 190; ]
+        module system_icon_light__about {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 190; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 191; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__about.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 192; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 195; ]
+        module system_size__toast_icon {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 195; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 196; @position = 18; ]
+            const scaleX as Number = 40;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 197; @position = 18; ]
+            const scaleY as Number = 40;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 198; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 201; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 201; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 202; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\confirmation_icon__hint_reject.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 203; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 206; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 206; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 207; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__hint_button_right_top.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 208; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 211; ]
+        module prompt_font__body_with_title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 211; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 212 18 ]
+                %tmp.26 = getm $.Toybox.Graphics;
+                %tmp.27 = getv %tmp.26 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.27;
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 213 18 ]
+                %tmp.28 = getm $.Toybox.Graphics;
+                %tmp.29 = getv %tmp.28 :FONT_TINY;
+                putv self :font %tmp.29;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 212; @position = 18; ]
+            const justification;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 213; @position = 18; ]
+            const font;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 216; ]
+        module confirmation_loc__body {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 216; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 217; @position = 18; ]
+            const x as Number = 76;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 218; @position = 18; ]
+            const y as Number = 76;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 221; ]
+        module prompt_color_dark__background {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 221; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 222; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 223; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 226; ]
+        module system_loc__hint_action_menu {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 226; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 227; @position = 18; ]
+            const x as Number = 393;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 228; @position = 18; ]
+            const y as Number = 84;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 231; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 231; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 232; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\confirmation_icon__hint_completion.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 233; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 236; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 236; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 237; @position = 18; ]
+            const x as Number = 17;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 238; @position = 18; ]
+            const y as Number = 300;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 239; @position = 18; ]
+            const horizontalJustification as String = "left";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 242; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 242; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 243; @position = 18; ]
+            const x as Number = 4;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 244; @position = 18; ]
+            const y as Number = 189;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 247; ]
+        module activity_color_dark__background {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 247; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 248; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 249; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 252; ]
+        module prompt_size__body_no_title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 252; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 253; @position = 18; ]
+            const width as Number = 363;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 254; @position = 18; ]
+            const height as Number = 363;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 257; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 257; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 258; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__hint_button_left_bottom.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 259; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 262; ]
+        module system_size__menu_icon {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 262; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 263; @position = 18; ]
+            const scaleX as Number = 60;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 264; @position = 18; ]
+            const scaleY as Number = 60;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 265; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 268; ]
+        module system_icon_destructive__warning {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 268; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 269; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_destructive__warning.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 270; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 273; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 273; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 274; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__hint_button_left_top.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 275; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 278; ]
+        module prompt_color_light__background {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 278; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 279; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 280; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 283; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 283; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 284; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 287; ]
+        module system_icon_dark__cancel {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 287; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 288; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__cancel.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 289; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 290; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 291; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 294; ]
+        module confirmation_input__delete {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 294; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 295 18 ]
+                %tmp.30 = getm $.Toybox.WatchUi;
+                %tmp.31 = getv %tmp.30 :KEY_ENTER;
+                putv self :button %tmp.31;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 295; @position = 18; ]
+            const button;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 298; ]
+        module prompt_size__body_with_title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 298; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 299; @position = 18; ]
+            const width as Number = 363;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 300; @position = 18; ]
+            const height as Number = 273;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 303; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 303; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 304; @position = 18; ]
+            const x as Number = 393;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 305; @position = 18; ]
+            const y as Number = 84;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 308; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 308; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 309; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__hint_button_left_top.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 310; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 313; ]
+        module system_color_light__text {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 313; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 315 18 ]
+                %tmp.32 = getm $.Toybox.Graphics;
+                %tmp.33 = getv %tmp.32 :COLOR_TRANSPARENT;
+                putv self :background %tmp.33;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 314; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 315; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 318; ]
+        module system_input__action_menu {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 318; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 319 18 ]
+                %tmp.34 = getm $.Toybox.WatchUi;
+                %tmp.35 = getv %tmp.34 :KEY_ENTER;
+                putv self :button %tmp.35;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 319; @position = 18; ]
+            const button;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 322; ]
+        module system_icon_light__save {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 322; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 323; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__save.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 324; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 327; ]
+        module system_icon_light__check {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 327; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 328; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__check.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 329; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 332; ]
+        module prompt_color_light__body {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 332; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 334 18 ]
+                %tmp.36 = getm $.Toybox.Graphics;
+                %tmp.37 = getv %tmp.36 :COLOR_TRANSPARENT;
+                putv self :background %tmp.37;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 333; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 334; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 337; ]
+        module system_loc__subwindow {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 337; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 338; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 341; ]
+        module confirmation_input__reject {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 341; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 342 18 ]
+                %tmp.38 = getm $.Toybox.WatchUi;
+                %tmp.39 = getv %tmp.38 :KEY_DOWN;
+                putv self :button %tmp.39;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 342; @position = 18; ]
+            const button;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 345; ]
+        module system_icon_light__warning {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 345; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 346; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__warning.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 347; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 350; ]
+        module system_icon_light__revert {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 350; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 351; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__revert.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 352; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 355; ]
+        module system_size__subwindow {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 355; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 356; @position = 18; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 359; ]
+        module confirmation_color_light__body {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 359; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 361 18 ]
+                %tmp.40 = getm $.Toybox.Graphics;
+                %tmp.41 = getv %tmp.40 :COLOR_TRANSPARENT;
+                putv self :background %tmp.41;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 360; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 361; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 364; ]
+        module activity_color_light__background {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 364; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 365; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 366; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 369; ]
+        module system_icon_dark__check {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 369; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 370; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__check.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 371; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 372; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 373; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 376; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 376; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 377; @position = 18; ]
+            const x as Number = 17;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 378; @position = 18; ]
+            const y as Number = 300;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 379; @position = 18; ]
+            const horizontalJustification as String = "left";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 382; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 382; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 383; @position = 18; ]
+            const x as Number = 362;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 384; @position = 18; ]
+            const y as Number = 84;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 387; ]
+        module system_size__screen {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 387; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 388; @position = 18; ]
+            const width as Number = 454;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 389; @position = 18; ]
+            const height as Number = 454;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 392; ]
+        module system_color_light__background {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 392; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 393; @position = 18; ]
+            const color as Number = 0x000000;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 394; @position = 18; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 397; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 397; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 398; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__hint_button_left_middle.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 399; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 402; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 402; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 403; @position = 18; ]
+            const x as Number = 362;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 404; @position = 18; ]
+            const y as Number = 84;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 407; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 407; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 408; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__hint_button_right_bottom.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 409; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 412; ]
+        module system_icon_dark__revert {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 412; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 413; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__revert.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 414; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 415; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 416; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 419; ]
+        module activity_color_dark__text {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 419; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 421 18 ]
+                %tmp.42 = getm $.Toybox.Graphics;
+                %tmp.43 = getv %tmp.42 :COLOR_TRANSPARENT;
+                putv self :background %tmp.43;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 420; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 421; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 424; ]
+        module confirmation_input__keep {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 424; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 425 18 ]
+                %tmp.44 = getm $.Toybox.WatchUi;
+                %tmp.45 = getv %tmp.44 :KEY_DOWN;
+                putv self :button %tmp.45;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 425; @position = 18; ]
+            const button;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 428; ]
+        module prompt_loc__body_with_title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 428; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 429; @position = 18; ]
+            const x as Number = 38;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 430; @position = 18; ]
+            const y as Number = 115;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 433; ]
+        module system_icon_dark__question {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 433; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 434; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__question.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 435; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 436; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 437; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 440; ]
+        module system_icon_light__discard {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 440; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 441; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__discard.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 442; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 445; ]
+        module device_info {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 445; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 447 18 ]
+                %tmp.46 = getm $.Toybox.System;
+                %tmp.47 = getv %tmp.46 :SCREEN_SHAPE_ROUND;
+                putv self :screenShape %tmp.47;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 446; @position = 18; ]
+            const screenWidth as Number = 454;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 447; @position = 18; ]
+            const screenShape;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 448; @position = 18; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 449; @position = 18; ]
+            const screenHeight as Number = 454;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 450; @position = 18; ]
+            const hasTouchScreen as Boolean = true;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 453; ]
+        module system_icon_dark__search {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 453; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 454; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__search.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 455; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 456; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 457; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 460; ]
+        module activity_color_light__text {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 460; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 462 18 ]
+                %tmp.48 = getm $.Toybox.Graphics;
+                %tmp.49 = getv %tmp.48 :COLOR_TRANSPARENT;
+                putv self :background %tmp.49;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 461; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 462; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 465; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 465; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 466; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\confirmation_icon__hint_keep.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 467; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 470; ]
+        module system_icon_dark__save {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 470; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 471; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__save.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 472; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 473; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 474; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 477; ]
+        module prompt_font__body_no_title {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 477; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 478 18 ]
+                %tmp.50 = getm $.Toybox.Graphics;
+                %tmp.51 = getv %tmp.50 :TEXT_JUSTIFY_CENTER;
+                %tmp.52 = getm $.Toybox.Graphics;
+                %tmp.53 = getv %tmp.52 :TEXT_JUSTIFY_VCENTER;
+                %tmp.54 = bitor %tmp.51 %tmp.53;
+                putv self :justification %tmp.54;
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 479 18 ]
+                %tmp.55 = getm $.Toybox.Graphics;
+                %tmp.56 = getv %tmp.55 :FONT_TINY;
+                putv self :font %tmp.56;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 478; @position = 18; ]
+            const justification;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 479; @position = 18; ]
+            const font;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 482; ]
+        module system_icon_light__search {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 482; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 483; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__search.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 484; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 487; ]
+        module prompt_size__title_icon {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 487; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 488; @position = 18; ]
+            const scaleX as Float = 0.15;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 489; @position = 18; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 492; ]
+        module system_icon_dark__warning {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 492; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 493; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_dark__warning.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 494; @position = 18; ]
+            const compress as String = "true";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 495; @position = 18; ]
+            const dithering as String = "none";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 496; @position = 18; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 499; ]
+        module prompt_loc__title_icon {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 499; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 500; @position = 18; ]
+            const x as Number = 227;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 501; @position = 18; ]
+            const y as Number = 57;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 502; @position = 18; ]
+            const horizontalJustification as String = "center";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 503; @position = 18; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 506; ]
+        module prompt_color_dark__body {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 506; ]
+            <init> {
+[ "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen" 508 18 ]
+                %tmp.57 = getm $.Toybox.Graphics;
+                %tmp.58 = getv %tmp.57 :COLOR_TRANSPARENT;
+                putv self :background %tmp.58;
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 507; @position = 18; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 508; @position = 18; ]
+            const background;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 511; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 511; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 512; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\confirmation_icon__hint_delete.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 513; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 516; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 516; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 517; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_light__hint_button_right_top.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 518; @position = 18; ]
+            const dithering as String = "none";
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 521; ]
+        module confirmation_size__body {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 521; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 522; @position = 18; ]
+            const width as Number = 273;
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 523; @position = 18; ]
+            const height as Number = 273;
+        }
+        [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 526; ]
+        module system_icon_positive__check {
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 526; ]
+            <init> {
+            }
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 527; @position = 18; ]
+            const filename as String = "C:\\Users\\Toumal\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\epix2pro51mm\\system_icon_positive__check.svg";
+            [ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 528; @position = 18; ]
+            const dithering as String = "none";
+        }
+    }
+}
+[ @file = "E:\Work\Weatherstation-Garmin\bin\gen\006-B4314-00\source\Rez.mcgen"; @line = 1; ]
+<init> {
+}

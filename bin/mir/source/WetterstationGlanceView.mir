@@ -1,0 +1,1117 @@
+[ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 3; ]
+import Toybox.Timer;
+[ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 5; glance = true; ]
+class WetterstationGlanceView extends WatchUi.GlanceView{
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 7; @position = 8; ]
+    var sd = null;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 8; @position = 8; ]
+    var refreshTimer = null;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 10; ]
+    function initialize() as Void {
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_10_26_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 11 8 ]
+        %tmp.2 = getv ? :GlanceView;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 12 8 ]
+        %tmp.5 = getv ? :WeatherData;
+        %tmp.6 = getv function %tmp.5 :getWeatherData;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        putv self :sd %tmp.7;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 13 8 ]
+        %tmp.9 = getv ? :sd;
+        %tmp.10 = getv function %tmp.9 :setMode;
+        %tmp.11 = 5;
+        invoke %tmp.9 %tmp.10(%tmp.11);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_10_26_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 17; ]
+    function onUpdate(dc as Dc) as Void {
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_17_40_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 19 8 ]
+        %tmp.2 = getv ? :GlanceView;
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 20 8 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_8_if_stmt:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_12_begin:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_12_begin:
+        %tmp.7 = getv ? :sd;
+        %tmp.8 = null;
+        %tmp.9 = ne %tmp.7 %tmp.8;
+        %tmp.10 = dup %tmp.9;
+        bf %tmp.10 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_26_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_26_true:
+        %tmp.12 = getv ? :sd;
+        %tmp.13 = as %tmp.12 { (!Null) };
+        %tmp.14 = getv function %tmp.13 :getData;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        %tmp.16 = null;
+        %tmp.17 = ne %tmp.15 %tmp.16;
+        %tmp.18 = and %tmp.9 %tmp.17;
+        push %tmp.18;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_26_end:
+        %tmp.19 = phi [%tmp.10 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_12_begin] [%tmp.18 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_26_true] [%tmp.19 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_26_end];
+        %tmp.20 = dup %tmp.19;
+        bf %tmp.20 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_50_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_50_true:
+        %tmp.22 = getv ? :sd;
+        %tmp.23 = getv function %tmp.22 :getData;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        %tmp.25 = getv function %tmp.24 :isEmpty;
+        %tmp.26 = invoke %tmp.24 %tmp.25();
+        %tmp.27 = not %tmp.26;
+        %tmp.28 = and %tmp.19 %tmp.27;
+        push %tmp.28;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_50_end:
+        %tmp.29 = phi [%tmp.20 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_12_begin] [%tmp.28 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_50_true] [%tmp.29 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_50_end];
+        bf %tmp.29 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_8_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_8_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_75_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 23 12 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_12_if_stmt:
+        %tmp.31 = getv ? :sd;
+        %tmp.32 = getv function %tmp.31 :getGlanceBitmap;
+        %tmp.33 = invoke %tmp.31 %tmp.32();
+        %tmp.34 = null;
+        %tmp.35 = eq %tmp.33 %tmp.34;
+        bf %tmp.35 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_12_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_12_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 24 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %mode.1 = local;
+        %tmp.37 = getv ? :sd;
+        %tmp.38 = getv function %tmp.37 :getMode;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        lputv %mode.1 %tmp.39;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 25 16 ]
+        %tmp.42 = lgetv %mode.1;
+        %tmp.43 = add %tmp.42 1;
+        lputv %mode.1 %tmp.43;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 26 16 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_26_16_if_stmt:
+        %tmp.45 = lgetv %mode.1;
+        %tmp.46 = 4;
+        %tmp.47 = gt %tmp.45 %tmp.46;
+        bf %tmp.47 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_26_16_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_26_16_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_26_30_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 27 20 ]
+        %tmp.48 = 1;
+        lputv %mode.1 %tmp.48;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_26_30_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_26_16_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_26_16_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 29 16 ]
+        %tmp.50 = getv ? :sd;
+        %tmp.51 = getv function %tmp.50 :setMode;
+        %tmp.53 = lgetv %mode.1;
+        invoke %tmp.50 %tmp.51(%tmp.53);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 36 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %bitmapOpts.2 = local;
+        %tmp.54 = newd 2;
+        %tmp.56 = const :width;
+        %tmp.57 = lgetv %dc;
+        %tmp.58 = getv function %tmp.57 :getWidth;
+        %tmp.59 = invoke %tmp.57 %tmp.58();
+        %tmp.60 = dup %tmp.54;
+        %tmp.61 = aputv %tmp.60 %tmp.56 %tmp.59;
+        %tmp.63 = const :height;
+        %tmp.64 = lgetv %dc;
+        %tmp.65 = getv function %tmp.64 :getHeight;
+        %tmp.66 = invoke %tmp.64 %tmp.65();
+        %tmp.67 = dup %tmp.61;
+        %tmp.68 = aputv %tmp.67 %tmp.63 %tmp.66;
+        lputv %bitmapOpts.2 %tmp.68;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 40 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %bitmap.3 = local;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_begin:
+        %tmp.70 = getm $.Toybox.Graphics;
+        %tmp.72 = const :createBufferedBitmap;
+        %tmp.73 = canhazplz %tmp.70 %tmp.72;
+        bf %tmp.73 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_false;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_true:
+        %tmp.74 = getm $.Toybox.Graphics;
+        %tmp.75 = getv function %tmp.74 :createBufferedBitmap;
+        %tmp.77 = lgetv %bitmapOpts.2;
+        %tmp.78 = invoke %tmp.74 %tmp.75(%tmp.77);
+        %tmp.79 = getv function %tmp.78 :get;
+        %tmp.80 = invoke %tmp.78 %tmp.79();
+        %tmp.81 = as %tmp.80 BufferedBitmap;
+        push %tmp.81;
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_false:
+        %tmp.84 = getm $.Toybox.Graphics;
+        %tmp.85 = getv function ? %tmp.84 :BufferedBitmap;
+        %tmp.87 = lgetv %bitmapOpts.2;
+        %tmp.82 = newc %tmp.85 (%tmp.87);
+        push %tmp.82;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_end:
+        %tmp.88 = phi [%tmp.73 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_begin] [%tmp.81 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_true] [%tmp.82 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_false] [%tmp.88 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_40_29_end];
+        lputv %bitmap.3 %tmp.88;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 43 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %bitmapDc.4 = local;
+        %tmp.89 = lgetv %bitmap.3;
+        %tmp.90 = getv function %tmp.89 :getDc;
+        %tmp.91 = invoke %tmp.89 %tmp.90();
+        lputv %bitmapDc.4 %tmp.91;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 44 16 ]
+        %tmp.92 = lgetv %bitmapDc.4;
+        %tmp.93 = getv function %tmp.92 :clearClip;
+        invoke %tmp.92 %tmp.93();
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 45 16 ]
+        %tmp.94 = lgetv %bitmapDc.4;
+        %tmp.95 = getv function %tmp.94 :setColor;
+        %tmp.96 = getm $.Toybox.Graphics;
+        %tmp.97 = getv %tmp.96 :COLOR_BLACK;
+        %tmp.98 = getm $.Toybox.Graphics;
+        %tmp.99 = getv %tmp.98 :COLOR_BLACK;
+        invoke %tmp.94 %tmp.95(%tmp.97, %tmp.99);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 46 16 ]
+        %tmp.100 = lgetv %bitmapDc.4;
+        %tmp.101 = getv function %tmp.100 :clear;
+        invoke %tmp.100 %tmp.101();
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 49 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %temperature.5 = local;
+        %tmp.103 = getv ? :sd;
+        %tmp.104 = getv function %tmp.103 :getCurTemperature;
+        %tmp.105 = invoke %tmp.103 %tmp.104();
+        lputv %temperature.5 %tmp.105;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 50 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %curvalue.6 = local;
+        %tmp.106 = 0;
+        lputv %curvalue.6 %tmp.106;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 51 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %histogram.7 = local;
+        %tmp.107 = null;
+        lputv %histogram.7 %tmp.107;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 52 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %linecolor.8 = local;
+        %tmp.108 = null;
+        lputv %linecolor.8 %tmp.108;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 53 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %gridInterval.9 = local;
+        %tmp.109 = 500;
+        lputv %gridInterval.9 %tmp.109;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 54 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %maxValue.10 = local;
+        %tmp.110 = 0.1;
+        lputv %maxValue.10 %tmp.110;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 55 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %minValue.11 = local;
+        %tmp.111 = 0;
+        lputv %minValue.11 %tmp.111;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 56 16 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_56_16_if_stmt:
+        %tmp.113 = lgetv %mode.1;
+        %tmp.114 = 2;
+        %tmp.115 = lte %tmp.113 %tmp.114;
+        bf %tmp.115 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_56_16_if_false;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_56_16_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_56_31_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 57 20 ]
+        %tmp.117 = getv ? :sd;
+        %tmp.118 = getv function %tmp.117 :getWindGustsHistogram;
+        %tmp.119 = invoke %tmp.117 %tmp.118();
+        lputv %histogram.7 %tmp.119;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 58 20 ]
+        %tmp.120 = getm $.Toybox.Graphics;
+        %tmp.121 = getv %tmp.120 :COLOR_YELLOW;
+        lputv %linecolor.8 %tmp.121;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 59 20 ]
+        %tmp.123 = getv ? :sd;
+        %tmp.124 = getv function %tmp.123 :getCurWindGusts;
+        %tmp.125 = invoke %tmp.123 %tmp.124();
+        %tmp.126 = " km/h";
+        %tmp.127 = add %tmp.125 %tmp.126;
+        lputv %curvalue.6 %tmp.127;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 60 20 ]
+        %tmp.128 = 5;
+        lputv %gridInterval.9 %tmp.128;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 61 20 ]
+        %tmp.130 = getv ? :sd;
+        %tmp.131 = getv function %tmp.130 :getMaxValue;
+        %tmp.133 = lgetv %histogram.7;
+        %tmp.134 = invoke %tmp.130 %tmp.131(%tmp.133);
+        lputv %maxValue.10 %tmp.134;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 62 20 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_62_20_if_stmt:
+        %tmp.136 = lgetv %maxValue.10;
+        %tmp.137 = 30;
+        %tmp.138 = lt %tmp.136 %tmp.137;
+        bf %tmp.138 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_62_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_62_20_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_62_39_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 63 24 ]
+        %tmp.139 = 30;
+        lputv %maxValue.10 %tmp.139;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_62_39_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_62_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_62_20_if_end:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_56_31_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_56_16_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_56_16_if_false:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 65 23 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_65_23_if_stmt:
+        %tmp.141 = lgetv %mode.1;
+        %tmp.142 = 3;
+        %tmp.143 = eq %tmp.141 %tmp.142;
+        bf %tmp.143 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_65_23_if_false;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_65_23_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_65_38_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 66 20 ]
+        %tmp.145 = getv ? :sd;
+        %tmp.146 = getv function %tmp.145 :getTemperatureHistogram;
+        %tmp.147 = invoke %tmp.145 %tmp.146();
+        lputv %histogram.7 %tmp.147;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 67 20 ]
+        %tmp.148 = getm $.Toybox.Graphics;
+        %tmp.149 = getv %tmp.148 :COLOR_GREEN;
+        lputv %linecolor.8 %tmp.149;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 68 20 ]
+        %tmp.151 = getv ? :sd;
+        %tmp.152 = getv function %tmp.151 :getCurTemperature;
+        %tmp.153 = invoke %tmp.151 %tmp.152();
+        %tmp.154 = " °C";
+        %tmp.155 = add %tmp.153 %tmp.154;
+        lputv %curvalue.6 %tmp.155;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 69 20 ]
+        %tmp.156 = 5;
+        lputv %gridInterval.9 %tmp.156;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 70 20 ]
+        %tmp.158 = getv ? :sd;
+        %tmp.159 = getv function %tmp.158 :getMaxValue;
+        %tmp.161 = lgetv %histogram.7;
+        %tmp.162 = invoke %tmp.158 %tmp.159(%tmp.161);
+        lputv %maxValue.10 %tmp.162;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 71 20 ]
+        %tmp.164 = getv ? :sd;
+        %tmp.165 = getv function %tmp.164 :getMinValue;
+        %tmp.167 = lgetv %histogram.7;
+        %tmp.168 = invoke %tmp.164 %tmp.165(%tmp.167);
+        %tmp.169 = getv function %tmp.168 :abs;
+        %tmp.170 = invoke %tmp.168 %tmp.169();
+        lputv %minValue.11 %tmp.170;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 72 20 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_72_20_if_stmt:
+        %tmp.172 = lgetv %maxValue.10;
+        %tmp.174 = lgetv %minValue.11;
+        %tmp.175 = lt %tmp.172 %tmp.174;
+        bf %tmp.175 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_72_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_72_20_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_72_45_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 73 24 ]
+        %tmp.177 = lgetv %minValue.11;
+        lputv %maxValue.10 %tmp.177;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_72_45_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_72_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_72_20_if_end:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_65_38_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_65_23_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_65_23_if_false:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 75 23 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_75_23_if_stmt:
+        %tmp.179 = lgetv %mode.1;
+        %tmp.180 = 4;
+        %tmp.181 = eq %tmp.179 %tmp.180;
+        bf %tmp.181 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_75_23_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_75_23_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_75_38_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 76 20 ]
+        %tmp.183 = getv ? :sd;
+        %tmp.184 = getv function %tmp.183 :getCurRain;
+        %tmp.185 = invoke %tmp.183 %tmp.184();
+        %tmp.186 = " mm/m²";
+        %tmp.187 = add %tmp.185 %tmp.186;
+        lputv %curvalue.6 %tmp.187;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 77 20 ]
+        %tmp.189 = getv ? :sd;
+        %tmp.190 = getv function %tmp.189 :getRainHistogram;
+        %tmp.191 = invoke %tmp.189 %tmp.190();
+        lputv %histogram.7 %tmp.191;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 78 20 ]
+        %tmp.192 = getm $.Toybox.Graphics;
+        %tmp.193 = getv %tmp.192 :COLOR_BLUE;
+        lputv %linecolor.8 %tmp.193;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 79 20 ]
+        %tmp.195 = getv ? :sd;
+        %tmp.196 = getv function %tmp.195 :getMaxValue;
+        %tmp.198 = lgetv %histogram.7;
+        %tmp.199 = invoke %tmp.195 %tmp.196(%tmp.198);
+        lputv %maxValue.10 %tmp.199;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 80 20 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_80_20_if_stmt:
+        %tmp.201 = lgetv %maxValue.10;
+        %tmp.202 = 1;
+        %tmp.203 = lt %tmp.201 %tmp.202;
+        bf %tmp.203 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_80_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_80_20_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_80_38_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 81 24 ]
+        %tmp.204 = 1.0;
+        lputv %maxValue.10 %tmp.204;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_80_38_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_80_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_80_20_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 83 20 ]
+        %tmp.205 = 1;
+        lputv %gridInterval.9 %tmp.205;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_75_38_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_75_23_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_75_23_if_end:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_65_23_if_end:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_56_16_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 87 16 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_87_16_if_stmt:
+        %tmp.207 = lgetv %maxValue.10;
+        %tmp.208 = 0;
+        %tmp.209 = eq %tmp.207 %tmp.208;
+        bf %tmp.209 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_87_16_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_87_16_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_87_35_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 88 20 ]
+        %tmp.210 = 0.01;
+        lputv %maxValue.10 %tmp.210;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_87_35_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_87_16_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_87_16_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 92 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %offset.12 = local;
+        %tmp.211 = 0;
+        lputv %offset.12 %tmp.211;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 93 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %dataoffset.13 = local;
+        %tmp.212 = 0;
+        lputv %dataoffset.13 %tmp.212;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 94 16 ]
+        %tmp.213 = lgetv %bitmapDc.4;
+        %tmp.214 = getv function %tmp.213 :setColor;
+        %tmp.215 = getm $.Toybox.Graphics;
+        %tmp.216 = getv %tmp.215 :COLOR_DK_GRAY;
+        %tmp.217 = getm $.Toybox.Graphics;
+        %tmp.218 = getv %tmp.217 :COLOR_BLACK;
+        invoke %tmp.213 %tmp.214(%tmp.216, %tmp.218);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 95 16 ]
+        for @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_test @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_incr @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_init:
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_begin" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_end" ]
+        %a.14 = local;
+        %tmp.220 = lgetv %gridInterval.9;
+        lputv %a.14 %tmp.220;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_test:
+        %tmp.222 = lgetv %a.14;
+        %tmp.224 = lgetv %maxValue.10;
+        %tmp.225 = lt %tmp.222 %tmp.224;
+        bf %tmp.225 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_begin:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_74_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 96 20 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_74_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_74_stop" ]
+        %y.15 = local;
+        %tmp.226 = lgetv %a.14;
+        %tmp.227 = getv function %tmp.226 :toFloat;
+        %tmp.228 = invoke %tmp.226 %tmp.227();
+        %tmp.229 = lgetv %maxValue.10;
+        %tmp.230 = getv function %tmp.229 :toFloat;
+        %tmp.231 = invoke %tmp.229 %tmp.230();
+        %tmp.232 = div %tmp.228 %tmp.231;
+        %tmp.233 = lgetv %dc;
+        %tmp.234 = getv function %tmp.233 :getHeight;
+        %tmp.235 = invoke %tmp.233 %tmp.234();
+        %tmp.236 = 2;
+        %tmp.237 = sub %tmp.235 %tmp.236;
+        %tmp.238 = mul %tmp.232 %tmp.237;
+        lputv %y.15 %tmp.238;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 97 20 ]
+        %tmp.239 = lgetv %bitmapDc.4;
+        %tmp.240 = getv function %tmp.239 :drawLine;
+        %tmp.242 = lgetv %offset.12;
+        %tmp.243 = lgetv %dc;
+        %tmp.244 = getv function %tmp.243 :getHeight;
+        %tmp.245 = invoke %tmp.243 %tmp.244();
+        %tmp.246 = 2;
+        %tmp.247 = sub %tmp.245 %tmp.246;
+        %tmp.249 = lgetv %y.15;
+        %tmp.250 = sub %tmp.247 %tmp.249;
+        %tmp.251 = lgetv %dc;
+        %tmp.252 = getv function %tmp.251 :getWidth;
+        %tmp.253 = invoke %tmp.251 %tmp.252();
+        %tmp.254 = 1;
+        %tmp.255 = sub %tmp.253 %tmp.254;
+        %tmp.256 = lgetv %dc;
+        %tmp.257 = getv function %tmp.256 :getHeight;
+        %tmp.258 = invoke %tmp.256 %tmp.257();
+        %tmp.259 = 2;
+        %tmp.260 = sub %tmp.258 %tmp.259;
+        %tmp.262 = lgetv %y.15;
+        %tmp.263 = sub %tmp.260 %tmp.262;
+        invoke %tmp.239 %tmp.240(%tmp.242, %tmp.250, %tmp.255, %tmp.263);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_74_stop:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_incr:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 95 ]
+        %tmp.264 = lgetv %a.14;
+        %tmp.266 = lgetv %gridInterval.9;
+        %tmp.267 = add %tmp.264 %tmp.266;
+        lputv %a.14 %tmp.267;
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_test;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_95_16_for_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 101 16 ]
+        %tmp.268 = lgetv %bitmapDc.4;
+        %tmp.269 = getv function %tmp.268 :setColor;
+        %tmp.270 = getm $.Toybox.Graphics;
+        %tmp.271 = getv %tmp.270 :COLOR_LT_GRAY;
+        %tmp.272 = getm $.Toybox.Graphics;
+        %tmp.273 = getv %tmp.272 :COLOR_BLACK;
+        invoke %tmp.268 %tmp.269(%tmp.271, %tmp.273);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 102 15 ]
+        %tmp.274 = lgetv %bitmapDc.4;
+        %tmp.275 = getv function %tmp.274 :drawLine;
+        %tmp.277 = lgetv %offset.12;
+        %tmp.278 = lgetv %dc;
+        %tmp.279 = getv function %tmp.278 :getHeight;
+        %tmp.280 = invoke %tmp.278 %tmp.279();
+        %tmp.281 = 1;
+        %tmp.282 = sub %tmp.280 %tmp.281;
+        %tmp.283 = lgetv %dc;
+        %tmp.284 = getv function %tmp.283 :getWidth;
+        %tmp.285 = invoke %tmp.283 %tmp.284();
+        %tmp.286 = lgetv %dc;
+        %tmp.287 = getv function %tmp.286 :getHeight;
+        %tmp.288 = invoke %tmp.286 %tmp.287();
+        %tmp.289 = 1;
+        %tmp.290 = sub %tmp.288 %tmp.289;
+        invoke %tmp.274 %tmp.275(%tmp.277, %tmp.282, %tmp.285, %tmp.290);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 103 16 ]
+        %tmp.291 = lgetv %bitmapDc.4;
+        %tmp.292 = getv function %tmp.291 :setFill;
+        %tmp.293 = getm $.Toybox.Graphics;
+        %tmp.294 = getv function %tmp.293 :createColor;
+        %tmp.295 = 30;
+        %tmp.296 = 255;
+        %tmp.297 = 255;
+        %tmp.298 = 255;
+        %tmp.299 = invoke %tmp.293 %tmp.294(%tmp.295, %tmp.296, %tmp.297, %tmp.298);
+        invoke %tmp.291 %tmp.292(%tmp.299);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 104 16 ]
+        %tmp.300 = lgetv %bitmapDc.4;
+        %tmp.301 = getv function %tmp.300 :setStroke;
+        %tmp.302 = getm $.Toybox.Graphics;
+        %tmp.303 = getv function %tmp.302 :createColor;
+        %tmp.304 = 30;
+        %tmp.305 = 255;
+        %tmp.306 = 255;
+        %tmp.307 = 255;
+        %tmp.308 = invoke %tmp.302 %tmp.303(%tmp.304, %tmp.305, %tmp.306, %tmp.307);
+        invoke %tmp.300 %tmp.301(%tmp.308);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 105 16 ]
+        for @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_test @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_incr @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_init:
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_begin" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_end" ]
+        %x.16 = local;
+        %tmp.310 = lgetv %offset.12;
+        lputv %x.16 %tmp.310;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_test:
+        %tmp.312 = lgetv %x.16;
+        %tmp.313 = lgetv %dc;
+        %tmp.314 = getv function %tmp.313 :getWidth;
+        %tmp.315 = invoke %tmp.313 %tmp.314();
+        %tmp.316 = lt %tmp.312 %tmp.315;
+        bf %tmp.316 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_begin:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_63_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 106 20 ]
+        %tmp.317 = lgetv %bitmapDc.4;
+        %tmp.318 = getv function %tmp.317 :drawLine;
+        %tmp.320 = lgetv %x.16;
+        %tmp.321 = 0;
+        %tmp.323 = lgetv %x.16;
+        %tmp.324 = lgetv %dc;
+        %tmp.325 = getv function %tmp.324 :getHeight;
+        %tmp.326 = invoke %tmp.324 %tmp.325();
+        invoke %tmp.317 %tmp.318(%tmp.320, %tmp.321, %tmp.323, %tmp.326);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_63_stop:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_incr:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 105 ]
+        %tmp.327 = lgetv %x.16;
+        %tmp.328 = 20;
+        %tmp.329 = add %tmp.327 %tmp.328;
+        lputv %x.16 %tmp.329;
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_test;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_105_16_for_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 110 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %zoomFactor.17 = local;
+        %tmp.330 = 2.0;
+        lputv %zoomFactor.17 %tmp.330;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 111 16 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_111_16_if_stmt:
+        %tmp.332 = getv ? :System;
+        %tmp.333 = getv function %tmp.332 :getDeviceSettings;
+        %tmp.334 = invoke %tmp.332 %tmp.333();
+        %tmp.335 = getv %tmp.334 :screenHeight;
+        %tmp.336 = 416;
+        %tmp.337 = gt %tmp.335 %tmp.336;
+        bf %tmp.337 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_111_16_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_111_16_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_111_67_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 112 20 ]
+        %tmp.338 = 2.25;
+        lputv %zoomFactor.17 %tmp.338;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_111_67_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_111_16_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_111_16_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 114 16 ]
+        for @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_test @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_incr @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_init:
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_begin" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_end" ]
+        %x.18 = local;
+        %tmp.339 = 0;
+        lputv %x.18 %tmp.339;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_test:
+        %tmp.341 = lgetv %x.18;
+        %tmp.342 = lgetv %histogram.7;
+        %tmp.343 = getv function %tmp.342 :size;
+        %tmp.344 = invoke %tmp.342 %tmp.343();
+        %tmp.346 = lgetv %zoomFactor.17;
+        %tmp.347 = mul %tmp.344 %tmp.346;
+        %tmp.349 = lgetv %dataoffset.13;
+        %tmp.350 = sub %tmp.347 %tmp.349;
+        %tmp.351 = lt %tmp.341 %tmp.350;
+        bf %tmp.351 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_begin:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_81_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 115 20 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_81_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_81_stop" ]
+        %alpha.19 = local;
+        %tmp.352 = 30;
+        %tmp.354 = lgetv %x.18;
+        %tmp.355 = 2;
+        %tmp.356 = div %tmp.354 %tmp.355;
+        %tmp.357 = add %tmp.352 %tmp.356;
+        lputv %alpha.19 %tmp.357;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 116 20 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_116_20_if_stmt:
+        %tmp.359 = lgetv %mode.1;
+        %tmp.360 = 2;
+        %tmp.361 = lte %tmp.359 %tmp.360;
+        bf %tmp.361 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_116_20_if_false;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_116_20_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_116_35_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 117 24 ]
+        %tmp.362 = lgetv %bitmapDc.4;
+        %tmp.363 = getv function %tmp.362 :setFill;
+        %tmp.364 = getm $.Toybox.Graphics;
+        %tmp.365 = getv function %tmp.364 :createColor;
+        %tmp.367 = lgetv %alpha.19;
+        %tmp.368 = 255;
+        %tmp.369 = 255;
+        %tmp.370 = 0;
+        %tmp.371 = invoke %tmp.364 %tmp.365(%tmp.367, %tmp.368, %tmp.369, %tmp.370);
+        invoke %tmp.362 %tmp.363(%tmp.371);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 118 24 ]
+        %tmp.372 = lgetv %bitmapDc.4;
+        %tmp.373 = getv function %tmp.372 :setStroke;
+        %tmp.374 = getm $.Toybox.Graphics;
+        %tmp.375 = getv function %tmp.374 :createColor;
+        %tmp.377 = lgetv %alpha.19;
+        %tmp.378 = 255;
+        %tmp.379 = 255;
+        %tmp.380 = 0;
+        %tmp.381 = invoke %tmp.374 %tmp.375(%tmp.377, %tmp.378, %tmp.379, %tmp.380);
+        invoke %tmp.372 %tmp.373(%tmp.381);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_116_35_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_116_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_116_20_if_false:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 119 27 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_119_27_if_stmt:
+        %tmp.383 = lgetv %mode.1;
+        %tmp.384 = 3;
+        %tmp.385 = eq %tmp.383 %tmp.384;
+        bf %tmp.385 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_119_27_if_false;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_119_27_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_119_42_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 120 24 ]
+        %tmp.386 = lgetv %bitmapDc.4;
+        %tmp.387 = getv function %tmp.386 :setFill;
+        %tmp.388 = getm $.Toybox.Graphics;
+        %tmp.389 = getv function %tmp.388 :createColor;
+        %tmp.391 = lgetv %alpha.19;
+        %tmp.392 = 0;
+        %tmp.393 = 255;
+        %tmp.394 = 0;
+        %tmp.395 = invoke %tmp.388 %tmp.389(%tmp.391, %tmp.392, %tmp.393, %tmp.394);
+        invoke %tmp.386 %tmp.387(%tmp.395);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 121 24 ]
+        %tmp.396 = lgetv %bitmapDc.4;
+        %tmp.397 = getv function %tmp.396 :setStroke;
+        %tmp.398 = getm $.Toybox.Graphics;
+        %tmp.399 = getv function %tmp.398 :createColor;
+        %tmp.401 = lgetv %alpha.19;
+        %tmp.402 = 0;
+        %tmp.403 = 255;
+        %tmp.404 = 0;
+        %tmp.405 = invoke %tmp.398 %tmp.399(%tmp.401, %tmp.402, %tmp.403, %tmp.404);
+        invoke %tmp.396 %tmp.397(%tmp.405);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_119_42_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_119_27_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_119_27_if_false:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 122 27 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_122_27_if_stmt:
+        %tmp.407 = lgetv %mode.1;
+        %tmp.408 = 4;
+        %tmp.409 = eq %tmp.407 %tmp.408;
+        bf %tmp.409 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_122_27_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_122_27_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_122_42_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 123 24 ]
+        %tmp.410 = lgetv %bitmapDc.4;
+        %tmp.411 = getv function %tmp.410 :setFill;
+        %tmp.412 = getm $.Toybox.Graphics;
+        %tmp.413 = getv function %tmp.412 :createColor;
+        %tmp.415 = lgetv %alpha.19;
+        %tmp.416 = 0;
+        %tmp.417 = 0;
+        %tmp.418 = 255;
+        %tmp.419 = invoke %tmp.412 %tmp.413(%tmp.415, %tmp.416, %tmp.417, %tmp.418);
+        invoke %tmp.410 %tmp.411(%tmp.419);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 124 24 ]
+        %tmp.420 = lgetv %bitmapDc.4;
+        %tmp.421 = getv function %tmp.420 :setStroke;
+        %tmp.422 = getm $.Toybox.Graphics;
+        %tmp.423 = getv function %tmp.422 :createColor;
+        %tmp.425 = lgetv %alpha.19;
+        %tmp.426 = 0;
+        %tmp.427 = 0;
+        %tmp.428 = 255;
+        %tmp.429 = invoke %tmp.422 %tmp.423(%tmp.425, %tmp.426, %tmp.427, %tmp.428);
+        invoke %tmp.420 %tmp.421(%tmp.429);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_122_42_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_122_27_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_122_27_if_end:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_119_27_if_end:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_116_20_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 126 20 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_81_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_81_stop" ]
+        %height.20 = local;
+        %tmp.431 = lgetv %histogram.7;
+        %tmp.433 = lgetv %x.18;
+        %tmp.435 = lgetv %dataoffset.13;
+        %tmp.436 = add %tmp.433 %tmp.435;
+        %tmp.438 = lgetv %zoomFactor.17;
+        %tmp.439 = div %tmp.436 %tmp.438;
+        %tmp.440 = getv function %tmp.439 :toNumber;
+        %tmp.441 = invoke %tmp.439 %tmp.440();
+        %tmp.442 = agetv %tmp.431 %tmp.441;
+        %tmp.443 = getv function %tmp.442 :toFloat;
+        %tmp.444 = invoke %tmp.442 %tmp.443();
+        %tmp.445 = lgetv %maxValue.10;
+        %tmp.446 = getv function %tmp.445 :toFloat;
+        %tmp.447 = invoke %tmp.445 %tmp.446();
+        %tmp.448 = div %tmp.444 %tmp.447;
+        %tmp.449 = lgetv %dc;
+        %tmp.450 = getv function %tmp.449 :getHeight;
+        %tmp.451 = invoke %tmp.449 %tmp.450();
+        %tmp.452 = getv function %tmp.451 :toFloat;
+        %tmp.453 = invoke %tmp.451 %tmp.452();
+        %tmp.454 = 2.0f;
+        %tmp.455 = sub %tmp.453 %tmp.454;
+        %tmp.456 = mul %tmp.448 %tmp.455;
+        lputv %height.20 %tmp.456;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 127 20 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_127_20_if_stmt:
+        %tmp.458 = lgetv %height.20;
+        %tmp.459 = 0;
+        %tmp.460 = lt %tmp.458 %tmp.459;
+        bf %tmp.460 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_127_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_127_20_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_127_36_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 128 24 ]
+        %tmp.461 = 0;
+        lputv %height.20 %tmp.461;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_127_36_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_127_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_127_20_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 130 20 ]
+        %tmp.462 = lgetv %bitmapDc.4;
+        %tmp.463 = getv function %tmp.462 :drawLine;
+        %tmp.465 = lgetv %x.18;
+        %tmp.466 = 1;
+        %tmp.467 = add %tmp.465 %tmp.466;
+        %tmp.469 = lgetv %offset.12;
+        %tmp.470 = add %tmp.467 %tmp.469;
+        %tmp.471 = lgetv %dc;
+        %tmp.472 = getv function %tmp.471 :getHeight;
+        %tmp.473 = invoke %tmp.471 %tmp.472();
+        %tmp.474 = 1;
+        %tmp.475 = sub %tmp.473 %tmp.474;
+        %tmp.476 = lgetv %height.20;
+        %tmp.477 = getv function %tmp.476 :toNumber;
+        %tmp.478 = invoke %tmp.476 %tmp.477();
+        %tmp.479 = sub %tmp.475 %tmp.478;
+        %tmp.481 = lgetv %x.18;
+        %tmp.482 = 1;
+        %tmp.483 = add %tmp.481 %tmp.482;
+        %tmp.485 = lgetv %offset.12;
+        %tmp.486 = add %tmp.483 %tmp.485;
+        %tmp.487 = lgetv %dc;
+        %tmp.488 = getv function %tmp.487 :getHeight;
+        %tmp.489 = invoke %tmp.487 %tmp.488();
+        %tmp.490 = 1;
+        %tmp.491 = sub %tmp.489 %tmp.490;
+        invoke %tmp.462 %tmp.463(%tmp.470, %tmp.479, %tmp.486, %tmp.491);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_81_stop:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_incr:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 114 ]
+        %tmp.494 = lgetv %x.18;
+        %tmp.495 = add %tmp.494 1;
+        lputv %x.18 %tmp.495;
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_test;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_114_16_for_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 134 16 ]
+        %tmp.496 = lgetv %bitmapDc.4;
+        %tmp.497 = getv function %tmp.496 :setPenWidth;
+        %tmp.498 = 2;
+        invoke %tmp.496 %tmp.497(%tmp.498);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 135 13 ]
+        %tmp.499 = lgetv %bitmapDc.4;
+        %tmp.500 = getv function %tmp.499 :setColor;
+        %tmp.502 = lgetv %linecolor.8;
+        %tmp.503 = getm $.Toybox.Graphics;
+        %tmp.504 = getv %tmp.503 :COLOR_BLACK;
+        invoke %tmp.499 %tmp.500(%tmp.502, %tmp.504);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 137 16 ]
+        for @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_test @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_incr @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_init:
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_begin" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_end" ]
+        %x.21 = local;
+        %tmp.505 = 1;
+        lputv %x.21 %tmp.505;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_test:
+        %tmp.507 = lgetv %x.21;
+        %tmp.508 = lgetv %histogram.7;
+        %tmp.509 = getv function %tmp.508 :size;
+        %tmp.510 = invoke %tmp.508 %tmp.509();
+        %tmp.512 = lgetv %zoomFactor.17;
+        %tmp.513 = mul %tmp.510 %tmp.512;
+        %tmp.515 = lgetv %dataoffset.13;
+        %tmp.516 = sub %tmp.513 %tmp.515;
+        %tmp.517 = lt %tmp.507 %tmp.516;
+        bf %tmp.517 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_begin:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_82_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 138 20 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_82_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_82_stop" ]
+        %heightprev.22 = local;
+        %tmp.519 = lgetv %histogram.7;
+        %tmp.521 = lgetv %x.21;
+        %tmp.523 = lgetv %dataoffset.13;
+        %tmp.524 = add %tmp.521 %tmp.523;
+        %tmp.525 = 2;
+        %tmp.526 = sub %tmp.524 %tmp.525;
+        %tmp.528 = lgetv %zoomFactor.17;
+        %tmp.529 = div %tmp.526 %tmp.528;
+        %tmp.530 = getv function %tmp.529 :toNumber;
+        %tmp.531 = invoke %tmp.529 %tmp.530();
+        %tmp.532 = agetv %tmp.519 %tmp.531;
+        %tmp.533 = getv function %tmp.532 :toFloat;
+        %tmp.534 = invoke %tmp.532 %tmp.533();
+        %tmp.535 = lgetv %maxValue.10;
+        %tmp.536 = getv function %tmp.535 :toFloat;
+        %tmp.537 = invoke %tmp.535 %tmp.536();
+        %tmp.538 = div %tmp.534 %tmp.537;
+        %tmp.539 = lgetv %dc;
+        %tmp.540 = getv function %tmp.539 :getHeight;
+        %tmp.541 = invoke %tmp.539 %tmp.540();
+        %tmp.542 = getv function %tmp.541 :toFloat;
+        %tmp.543 = invoke %tmp.541 %tmp.542();
+        %tmp.544 = 2.0f;
+        %tmp.545 = sub %tmp.543 %tmp.544;
+        %tmp.546 = mul %tmp.538 %tmp.545;
+        lputv %heightprev.22 %tmp.546;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 139 20 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_82_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_82_stop" ]
+        %height.23 = local;
+        %tmp.548 = lgetv %histogram.7;
+        %tmp.550 = lgetv %x.21;
+        %tmp.552 = lgetv %dataoffset.13;
+        %tmp.553 = add %tmp.550 %tmp.552;
+        %tmp.555 = lgetv %zoomFactor.17;
+        %tmp.556 = div %tmp.553 %tmp.555;
+        %tmp.557 = getv function %tmp.556 :toNumber;
+        %tmp.558 = invoke %tmp.556 %tmp.557();
+        %tmp.559 = agetv %tmp.548 %tmp.558;
+        %tmp.560 = getv function %tmp.559 :toFloat;
+        %tmp.561 = invoke %tmp.559 %tmp.560();
+        %tmp.562 = lgetv %maxValue.10;
+        %tmp.563 = getv function %tmp.562 :toFloat;
+        %tmp.564 = invoke %tmp.562 %tmp.563();
+        %tmp.565 = div %tmp.561 %tmp.564;
+        %tmp.566 = lgetv %dc;
+        %tmp.567 = getv function %tmp.566 :getHeight;
+        %tmp.568 = invoke %tmp.566 %tmp.567();
+        %tmp.569 = getv function %tmp.568 :toFloat;
+        %tmp.570 = invoke %tmp.568 %tmp.569();
+        %tmp.571 = mul %tmp.565 %tmp.570;
+        %tmp.572 = 2.0f;
+        %tmp.573 = sub %tmp.571 %tmp.572;
+        lputv %height.23 %tmp.573;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 140 20 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_140_20_if_stmt:
+        %tmp.575 = lgetv %heightprev.22;
+        %tmp.576 = 0;
+        %tmp.577 = lt %tmp.575 %tmp.576;
+        bf %tmp.577 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_140_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_140_20_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_140_40_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 141 24 ]
+        %tmp.578 = 0;
+        lputv %heightprev.22 %tmp.578;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_140_40_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_140_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_140_20_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 143 20 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_143_20_if_stmt:
+        %tmp.580 = lgetv %height.23;
+        %tmp.581 = 0;
+        %tmp.582 = lt %tmp.580 %tmp.581;
+        bf %tmp.582 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_143_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_143_20_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_143_36_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 144 24 ]
+        %tmp.583 = 0;
+        lputv %height.23 %tmp.583;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_143_36_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_143_20_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_143_20_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 146 20 ]
+        %tmp.584 = lgetv %bitmapDc.4;
+        %tmp.585 = getv function %tmp.584 :drawLine;
+        %tmp.587 = lgetv %x.21;
+        %tmp.589 = lgetv %offset.12;
+        %tmp.590 = add %tmp.587 %tmp.589;
+        %tmp.591 = lgetv %dc;
+        %tmp.592 = getv function %tmp.591 :getHeight;
+        %tmp.593 = invoke %tmp.591 %tmp.592();
+        %tmp.594 = 1;
+        %tmp.595 = sub %tmp.593 %tmp.594;
+        %tmp.596 = lgetv %heightprev.22;
+        %tmp.597 = getv function %tmp.596 :toNumber;
+        %tmp.598 = invoke %tmp.596 %tmp.597();
+        %tmp.599 = sub %tmp.595 %tmp.598;
+        %tmp.601 = lgetv %x.21;
+        %tmp.602 = 1;
+        %tmp.603 = add %tmp.601 %tmp.602;
+        %tmp.605 = lgetv %offset.12;
+        %tmp.606 = add %tmp.603 %tmp.605;
+        %tmp.607 = lgetv %dc;
+        %tmp.608 = getv function %tmp.607 :getHeight;
+        %tmp.609 = invoke %tmp.607 %tmp.608();
+        %tmp.610 = 1;
+        %tmp.611 = sub %tmp.609 %tmp.610;
+        %tmp.612 = lgetv %height.23;
+        %tmp.613 = getv function %tmp.612 :toNumber;
+        %tmp.614 = invoke %tmp.612 %tmp.613();
+        %tmp.615 = sub %tmp.611 %tmp.614;
+        invoke %tmp.584 %tmp.585(%tmp.590, %tmp.599, %tmp.606, %tmp.615);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_82_stop:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_incr:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 137 ]
+        %tmp.616 = lgetv %x.21;
+        %tmp.617 = 2;
+        %tmp.618 = add %tmp.616 %tmp.617;
+        lputv %x.21 %tmp.618;
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_test;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_137_16_for_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 150 16 ]
+        [ "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_start" "E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop" ]
+        %dim.24 = local;
+        %tmp.619 = lgetv %bitmapDc.4;
+        %tmp.620 = getv function %tmp.619 :getTextDimensions;
+        %tmp.622 = lgetv %curvalue.6;
+        %tmp.623 = getm $.Toybox.Graphics;
+        %tmp.624 = getv %tmp.623 :FONT_SYSTEM_TINY;
+        %tmp.625 = invoke %tmp.619 %tmp.620(%tmp.622, %tmp.624);
+        lputv %dim.24 %tmp.625;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 151 16 ]
+        %tmp.626 = lgetv %bitmapDc.4;
+        %tmp.627 = getv function %tmp.626 :setFill;
+        %tmp.628 = getm $.Toybox.Graphics;
+        %tmp.629 = getv function %tmp.628 :createColor;
+        %tmp.630 = 160;
+        %tmp.631 = 0;
+        %tmp.632 = 0;
+        %tmp.633 = 0;
+        %tmp.634 = invoke %tmp.628 %tmp.629(%tmp.630, %tmp.631, %tmp.632, %tmp.633);
+        invoke %tmp.626 %tmp.627(%tmp.634);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 152 16 ]
+        %tmp.635 = lgetv %bitmapDc.4;
+        %tmp.636 = getv function %tmp.635 :fillRectangle;
+        %tmp.637 = 15;
+        %tmp.638 = 58;
+        %tmp.640 = lgetv %dim.24;
+        %tmp.641 = 0;
+        %tmp.642 = agetv %tmp.640 %tmp.641;
+        %tmp.643 = 6;
+        %tmp.644 = add %tmp.642 %tmp.643;
+        %tmp.646 = lgetv %dim.24;
+        %tmp.647 = 1;
+        %tmp.648 = agetv %tmp.646 %tmp.647;
+        invoke %tmp.635 %tmp.636(%tmp.637, %tmp.638, %tmp.644, %tmp.648);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 154 16 ]
+        %tmp.649 = lgetv %bitmapDc.4;
+        %tmp.650 = getv function %tmp.649 :setColor;
+        %tmp.651 = getm $.Toybox.Graphics;
+        %tmp.652 = getv %tmp.651 :COLOR_BLACK;
+        %tmp.653 = getm $.Toybox.Graphics;
+        %tmp.654 = getv %tmp.653 :COLOR_TRANSPARENT;
+        invoke %tmp.649 %tmp.650(%tmp.652, %tmp.654);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 155 16 ]
+        %tmp.655 = lgetv %bitmapDc.4;
+        %tmp.656 = getv function %tmp.655 :drawText;
+        %tmp.657 = 18;
+        %tmp.658 = 1;
+        %tmp.659 = add %tmp.657 %tmp.658;
+        %tmp.660 = 58;
+        %tmp.661 = 1;
+        %tmp.662 = add %tmp.660 %tmp.661;
+        %tmp.663 = getm $.Toybox.Graphics;
+        %tmp.664 = getv %tmp.663 :FONT_SYSTEM_TINY;
+        %tmp.666 = lgetv %curvalue.6;
+        %tmp.667 = getm $.Toybox.Graphics;
+        %tmp.668 = getv %tmp.667 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.655 %tmp.656(%tmp.659, %tmp.662, %tmp.664, %tmp.666, %tmp.668);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 157 16 ]
+        %tmp.669 = lgetv %bitmapDc.4;
+        %tmp.670 = getv function %tmp.669 :setColor;
+        %tmp.671 = getm $.Toybox.Graphics;
+        %tmp.672 = getv %tmp.671 :COLOR_WHITE;
+        %tmp.673 = getm $.Toybox.Graphics;
+        %tmp.674 = getv %tmp.673 :COLOR_TRANSPARENT;
+        invoke %tmp.669 %tmp.670(%tmp.672, %tmp.674);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 158 16 ]
+        %tmp.675 = lgetv %bitmapDc.4;
+        %tmp.676 = getv function %tmp.675 :drawText;
+        %tmp.677 = 18;
+        %tmp.678 = 58;
+        %tmp.679 = getm $.Toybox.Graphics;
+        %tmp.680 = getv %tmp.679 :FONT_SYSTEM_TINY;
+        %tmp.682 = lgetv %curvalue.6;
+        %tmp.683 = getm $.Toybox.Graphics;
+        %tmp.684 = getv %tmp.683 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.675 %tmp.676(%tmp.677, %tmp.678, %tmp.680, %tmp.682, %tmp.684);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 170 16 ]
+        %tmp.686 = getv ? :sd;
+        %tmp.687 = getv function %tmp.686 :setGlanceBitmap;
+        %tmp.689 = lgetv %bitmap.3;
+        invoke %tmp.686 %tmp.687(%tmp.689);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_46_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_12_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_23_12_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 174 12 ]
+        %tmp.690 = lgetv %dc;
+        %tmp.691 = getv function %tmp.690 :drawBitmap;
+        %tmp.692 = 0;
+        %tmp.693 = 0;
+        %tmp.695 = getv ? :sd;
+        %tmp.696 = getv function %tmp.695 :getGlanceBitmap;
+        %tmp.697 = invoke %tmp.695 %tmp.696();
+        invoke %tmp.690 %tmp.691(%tmp.692, %tmp.693, %tmp.697);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_75_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_8_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_20_8_if_end:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_17_40_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 182; ]
+    function onShow() as Void {
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_182_30_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 183 8 ]
+        %tmp.2 = getv ? :WeatherData;
+        %tmp.3 = getv function %tmp.2 :getWeatherData;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        putv self :sd %tmp.4;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 184 8 ]
+        %tmp.7 = getm $.Toybox.Timer;
+        %tmp.8 = getv function ? %tmp.7 :Timer;
+        %tmp.5 = newc %tmp.8 ();
+        putv self :refreshTimer %tmp.5;
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 185 8 ]
+        %tmp.10 = getv ? :refreshTimer;
+        %tmp.11 = getv function %tmp.10 :start;
+        %tmp.12 = self;
+        %tmp.13 = getv function %tmp.12 :method;
+        %tmp.15 = const :timerCallback;
+        %tmp.16 = invoke %tmp.12 %tmp.13(%tmp.15);
+        %tmp.17 = 2000;
+        %tmp.18 = true;
+        invoke %tmp.10 %tmp.11(%tmp.16, %tmp.17, %tmp.18);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 186 8 ]
+        %tmp.20 = getv ? :System;
+        %tmp.21 = getv function %tmp.20 :println;
+        %tmp.22 = "Timer started";
+        invoke %tmp.20 %tmp.21(%tmp.22);
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_182_30_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 190; ]
+    function timerCallback() as Void {
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_190_36_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 191 8 ]
+        %tmp.2 = getv ? :sd;
+        %tmp.3 = getv function %tmp.2 :requestUpdate;
+        invoke %tmp.2 %tmp.3();
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_190_36_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 197; ]
+    function onHide() as Void {
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_197_30_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 198 8 ]
+        %tmp.2 = getv ? :System;
+        %tmp.3 = getv function %tmp.2 :println;
+        %tmp.4 = "Timer stopping";
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 199 8 ]
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_199_8_if_stmt:
+        %tmp.6 = getv ? :refreshTimer;
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_199_8_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_199_8_if_true:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_199_34_start:
+[ "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc" 200 12 ]
+        %tmp.10 = getv ? :refreshTimer;
+        %tmp.11 = as %tmp.10 { (!Null) };
+        %tmp.12 = getv function %tmp.11 :stop;
+        invoke %tmp.11 %tmp.12();
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_199_34_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_199_8_if_end;
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_199_8_if_end:
+E_Work_Weatherstation_Garmin_source_WetterstationGlanceView_mc_197_30_stop:
+    }
+}
+[ @file = "E:\Work\Weatherstation-Garmin\source\WetterstationGlanceView.mc"; @line = 1; ]
+<init> {
+}

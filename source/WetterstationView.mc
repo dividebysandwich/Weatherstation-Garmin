@@ -49,14 +49,14 @@ class WetterstationView extends WatchUi.View {
             else if (windspeedkmh < 10)
             {
                 thickness = 13;
-    	        dc.setFill(Graphics.createColor(255, 80, 200, 50));
-                dc.setStroke(Graphics.createColor(255, 60, 180, 30));
+    	        dc.setFill(Graphics.createColor(255, 50, 255, 50));
+                dc.setStroke(Graphics.createColor(255, 30, 230, 30));
             }
             else if (windspeedkmh < 15)
             {
                 thickness = 15;
-    	        dc.setFill(Graphics.createColor(255, 170, 150, 50));
-                dc.setStroke(Graphics.createColor(255, 150, 130, 30));
+    	        dc.setFill(Graphics.createColor(255, 80, 200, 50));
+                dc.setStroke(Graphics.createColor(255, 60, 180, 30));
             }
             else if (windspeedkmh < 20)
             {
@@ -81,8 +81,8 @@ class WetterstationView extends WatchUi.View {
             coord[4] = [0,-arrowheight/2];
 
             // Rotate the arrow coordinates
-            var xoffset = (416-arrowimagewidth)/2;
-            var yoffset = (416-arrowimageheight)/2;
+            var xoffset = (System.getDeviceSettings().screenWidth-arrowimagewidth)/2;
+            var yoffset = (System.getDeviceSettings().screenHeight-arrowimageheight)/2;
             for(var i=0; i<5; i++) {
                 var x = coord[i][0];
                 var y = coord[i][1];
@@ -93,10 +93,10 @@ class WetterstationView extends WatchUi.View {
             // Draw the arrow
             dc.fillPolygon(coord);
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(208, 360, Graphics.FONT_SYSTEM_TINY, sd.getCurTemperature()+" °C", Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(208, 10, Graphics.FONT_SYSTEM_TINY, sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(System.getDeviceSettings().screenWidth / 2, System.getDeviceSettings().screenHeight - 56, Graphics.FONT_SYSTEM_TINY, sd.getCurTemperature()+" °C", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
             if (windgustkmh > windspeedkmh + 10.0) {
-                dc.drawText(208, 37, Graphics.FONT_SYSTEM_TINY, "Gust "+sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
+                dc.drawText(System.getDeviceSettings().screenWidth / 2, 37, Graphics.FONT_SYSTEM_TINY, "Gust "+sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
 
             }
 

@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="E:\Work\Weatherstation-Garmin\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="1" lineNum="5" parent="globals/WetterstationApp" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="2" lineNum="12" parent="globals/WetterstationApp" pc="268435479" symbol="onStart"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="3" lineNum="20" parent="globals/WetterstationApp" pc="268435482" symbol="getInitialView"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="3" lineNum="21" parent="globals/WetterstationApp" pc="268435484" symbol="getInitialView"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="4" lineNum="7" parent="globals/WetterstationApp" pc="268435525" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="4" lineNum="8" parent="globals/WetterstationApp" pc="268435527" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="5" lineNum="24" parent="globals/WetterstationApp" pc="268435546" symbol="getGlanceView"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="5" lineNum="26" parent="globals/WetterstationApp" pc="268435548" symbol="getGlanceView"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="6" lineNum="16" parent="globals/WetterstationApp" pc="268435589" symbol="onStop"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="7" lineNum="6" parent="globals/WetterstationGlanceView" pc="268435592" symbol="&lt;init&gt;"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="8" lineNum="182" parent="globals/WetterstationGlanceView" pc="268435611" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="8" lineNum="183" parent="globals/WetterstationGlanceView" pc="268435613" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="8" lineNum="184" parent="globals/WetterstationGlanceView" pc="268435642" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="8" lineNum="185" parent="globals/WetterstationGlanceView" pc="268435676" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="8" lineNum="186" parent="globals/WetterstationGlanceView" pc="268435717" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="9" lineNum="10" parent="globals/WetterstationGlanceView" pc="268435741" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="9" lineNum="11" parent="globals/WetterstationGlanceView" pc="268435743" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="9" lineNum="12" parent="globals/WetterstationGlanceView" pc="268435761" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="9" lineNum="13" parent="globals/WetterstationGlanceView" pc="268435790" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="10" lineNum="197" parent="globals/WetterstationGlanceView" pc="268435814" symbol="onHide"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="10" lineNum="198" parent="globals/WetterstationGlanceView" pc="268435816" symbol="onHide"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="10" lineNum="199" parent="globals/WetterstationGlanceView" pc="268435839" symbol="onHide"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="10" lineNum="200" parent="globals/WetterstationGlanceView" pc="268435852" symbol="onHide"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="17" parent="globals/WetterstationGlanceView" pc="268435874" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="19" parent="globals/WetterstationGlanceView" pc="268435878" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="20" parent="globals/WetterstationGlanceView" pc="268435898" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="23" parent="globals/WetterstationGlanceView" pc="268435969" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="24" parent="globals/WetterstationGlanceView" pc="268435991" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="25" parent="globals/WetterstationGlanceView" pc="268436010" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="26" parent="globals/WetterstationGlanceView" pc="268436020" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="27" parent="globals/WetterstationGlanceView" pc="268436031" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="29" parent="globals/WetterstationGlanceView" pc="268436041" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="36" parent="globals/WetterstationGlanceView" pc="268436061" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="40" parent="globals/WetterstationGlanceView" pc="268436107" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="43" parent="globals/WetterstationGlanceView" pc="268436181" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="44" parent="globals/WetterstationGlanceView" pc="268436194" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="45" parent="globals/WetterstationGlanceView" pc="268436206" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="46" parent="globals/WetterstationGlanceView" pc="268436228" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="49" parent="globals/WetterstationGlanceView" pc="268436240" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="50" parent="globals/WetterstationGlanceView" pc="268436259" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="51" parent="globals/WetterstationGlanceView" pc="268436266" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="52" parent="globals/WetterstationGlanceView" pc="268436269" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="53" parent="globals/WetterstationGlanceView" pc="268436272" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="54" parent="globals/WetterstationGlanceView" pc="268436279" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="55" parent="globals/WetterstationGlanceView" pc="268436286" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="56" parent="globals/WetterstationGlanceView" pc="268436293" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="57" parent="globals/WetterstationGlanceView" pc="268436304" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="58" parent="globals/WetterstationGlanceView" pc="268436323" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="59" parent="globals/WetterstationGlanceView" pc="268436330" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="60" parent="globals/WetterstationGlanceView" pc="268436355" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="61" parent="globals/WetterstationGlanceView" pc="268436362" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="62" parent="globals/WetterstationGlanceView" pc="268436383" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="63" parent="globals/WetterstationGlanceView" pc="268436394" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="65" parent="globals/WetterstationGlanceView" pc="268436407" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="66" parent="globals/WetterstationGlanceView" pc="268436418" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="67" parent="globals/WetterstationGlanceView" pc="268436437" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="68" parent="globals/WetterstationGlanceView" pc="268436444" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="69" parent="globals/WetterstationGlanceView" pc="268436469" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="70" parent="globals/WetterstationGlanceView" pc="268436476" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="71" parent="globals/WetterstationGlanceView" pc="268436497" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="72" parent="globals/WetterstationGlanceView" pc="268436527" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="73" parent="globals/WetterstationGlanceView" pc="268436535" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="75" parent="globals/WetterstationGlanceView" pc="268436545" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="76" parent="globals/WetterstationGlanceView" pc="268436556" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="77" parent="globals/WetterstationGlanceView" pc="268436581" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="78" parent="globals/WetterstationGlanceView" pc="268436600" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="79" parent="globals/WetterstationGlanceView" pc="268436607" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="80" parent="globals/WetterstationGlanceView" pc="268436628" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="81" parent="globals/WetterstationGlanceView" pc="268436639" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="83" parent="globals/WetterstationGlanceView" pc="268436649" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="87" parent="globals/WetterstationGlanceView" pc="268436659" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="88" parent="globals/WetterstationGlanceView" pc="268436670" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="92" parent="globals/WetterstationGlanceView" pc="268436680" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="93" parent="globals/WetterstationGlanceView" pc="268436687" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="94" parent="globals/WetterstationGlanceView" pc="268436694" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="95" parent="globals/WetterstationGlanceView" pc="268436716" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="96" parent="globals/WetterstationGlanceView" pc="268436728" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="97" parent="globals/WetterstationGlanceView" pc="268436771" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="101" parent="globals/WetterstationGlanceView" pc="268436852" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="102" parent="globals/WetterstationGlanceView" pc="268436874" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="103" parent="globals/WetterstationGlanceView" pc="268436933" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="104" parent="globals/WetterstationGlanceView" pc="268436980" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="105" parent="globals/WetterstationGlanceView" pc="268437027" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="106" parent="globals/WetterstationGlanceView" pc="268437048" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="110" parent="globals/WetterstationGlanceView" pc="268437093" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="111" parent="globals/WetterstationGlanceView" pc="268437100" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="112" parent="globals/WetterstationGlanceView" pc="268437132" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="114" parent="globals/WetterstationGlanceView" pc="268437142" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="115" parent="globals/WetterstationGlanceView" pc="268437172" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="116" parent="globals/WetterstationGlanceView" pc="268437188" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="117" parent="globals/WetterstationGlanceView" pc="268437199" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="118" parent="globals/WetterstationGlanceView" pc="268437243" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="119" parent="globals/WetterstationGlanceView" pc="268437290" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="120" parent="globals/WetterstationGlanceView" pc="268437301" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="121" parent="globals/WetterstationGlanceView" pc="268437345" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="122" parent="globals/WetterstationGlanceView" pc="268437392" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="123" parent="globals/WetterstationGlanceView" pc="268437403" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="124" parent="globals/WetterstationGlanceView" pc="268437447" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="126" parent="globals/WetterstationGlanceView" pc="268437494" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="127" parent="globals/WetterstationGlanceView" pc="268437564" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="128" parent="globals/WetterstationGlanceView" pc="268437575" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="130" parent="globals/WetterstationGlanceView" pc="268437585" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="134" parent="globals/WetterstationGlanceView" pc="268437678" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="135" parent="globals/WetterstationGlanceView" pc="268437695" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="137" parent="globals/WetterstationGlanceView" pc="268437714" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="138" parent="globals/WetterstationGlanceView" pc="268437744" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="139" parent="globals/WetterstationGlanceView" pc="268437820" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="140" parent="globals/WetterstationGlanceView" pc="268437890" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="141" parent="globals/WetterstationGlanceView" pc="268437901" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="143" parent="globals/WetterstationGlanceView" pc="268437911" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="144" parent="globals/WetterstationGlanceView" pc="268437922" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="146" parent="globals/WetterstationGlanceView" pc="268437932" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="150" parent="globals/WetterstationGlanceView" pc="268438031" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="151" parent="globals/WetterstationGlanceView" pc="268438051" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="152" parent="globals/WetterstationGlanceView" pc="268438098" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="154" parent="globals/WetterstationGlanceView" pc="268438142" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="155" parent="globals/WetterstationGlanceView" pc="268438164" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="157" parent="globals/WetterstationGlanceView" pc="268438198" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="158" parent="globals/WetterstationGlanceView" pc="268438220" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="170" parent="globals/WetterstationGlanceView" pc="268438254" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="11" lineNum="174" parent="globals/WetterstationGlanceView" pc="268438277" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="12" lineNum="190" parent="globals/WetterstationGlanceView" pc="268438320" symbol="timerCallback"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationGlanceView.mc" id="12" lineNum="191" parent="globals/WetterstationGlanceView" pc="268438322" symbol="timerCallback"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="13" lineNum="107" parent="globals/WeatherData" pc="268438341" symbol="getWindSpeedHistogram"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="13" lineNum="108" parent="globals/WeatherData" pc="268438343" symbol="getWindSpeedHistogram"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="14" lineNum="132" parent="globals/WeatherData" pc="268438366" symbol="getMaxValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="14" lineNum="133" parent="globals/WeatherData" pc="268438370" symbol="getMaxValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="14" lineNum="134" parent="globals/WeatherData" pc="268438377" symbol="getMaxValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="14" lineNum="135" parent="globals/WeatherData" pc="268438401" symbol="getMaxValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="14" lineNum="136" parent="globals/WeatherData" pc="268438412" symbol="getMaxValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="14" lineNum="139" parent="globals/WeatherData" pc="268438435" symbol="getMaxValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="15" lineNum="101" parent="globals/WeatherData" pc="268438438" symbol="getCurHumidity"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="15" lineNum="102" parent="globals/WeatherData" pc="268438440" symbol="getCurHumidity"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="16" lineNum="110" parent="globals/WeatherData" pc="268438477" symbol="getWindGustsHistogram"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="16" lineNum="111" parent="globals/WeatherData" pc="268438479" symbol="getWindGustsHistogram"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="17" lineNum="113" parent="globals/WeatherData" pc="268438502" symbol="getRainHistogram"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="17" lineNum="114" parent="globals/WeatherData" pc="268438504" symbol="getRainHistogram"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="18" lineNum="124" parent="globals/WeatherData" pc="268438527" symbol="getGlanceBitmap"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="18" lineNum="125" parent="globals/WeatherData" pc="268438529" symbol="getGlanceBitmap"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="19" lineNum="92" parent="globals/WeatherData" pc="268438538" symbol="getCurRain"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="19" lineNum="93" parent="globals/WeatherData" pc="268438540" symbol="getCurRain"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="20" lineNum="151" parent="globals/WeatherData" pc="268438577" symbol="getWeatherData"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="20" lineNum="152" parent="globals/WeatherData" pc="268438579" symbol="getWeatherData"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="20" lineNum="153" parent="globals/WeatherData" pc="268438598" symbol="getWeatherData"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="20" lineNum="155" parent="globals/WeatherData" pc="268438637" symbol="getWeatherData"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="21" lineNum="83" parent="globals/WeatherData" pc="268438652" symbol="getCurWindDirection"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="21" lineNum="84" parent="globals/WeatherData" pc="268438654" symbol="getCurWindDirection"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="22" lineNum="29" parent="globals/WeatherData" pc="268438686" symbol="getMode"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="22" lineNum="30" parent="globals/WeatherData" pc="268438688" symbol="getMode"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="23" lineNum="104" parent="globals/WeatherData" pc="268438697" symbol="getCurSolarRadiation"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="23" lineNum="105" parent="globals/WeatherData" pc="268438699" symbol="getCurSolarRadiation"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="24" lineNum="89" parent="globals/WeatherData" pc="268438736" symbol="getCurWindGusts"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="24" lineNum="90" parent="globals/WeatherData" pc="268438738" symbol="getCurWindGusts"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="25" lineNum="80" parent="globals/WeatherData" pc="268438775" symbol="getData"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="25" lineNum="81" parent="globals/WeatherData" pc="268438777" symbol="getData"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="26" lineNum="86" parent="globals/WeatherData" pc="268438786" symbol="getCurWindSpeed"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="26" lineNum="87" parent="globals/WeatherData" pc="268438788" symbol="getCurWindSpeed"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="27" lineNum="25" parent="globals/WeatherData" pc="268438825" symbol="setMode"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="27" lineNum="26" parent="globals/WeatherData" pc="268438827" symbol="setMode"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="28" lineNum="55" parent="globals/WeatherData" pc="268438838" symbol="requestUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="28" lineNum="56" parent="globals/WeatherData" pc="268438840" symbol="requestUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="28" lineNum="57" parent="globals/WeatherData" pc="268438884" symbol="requestUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="28" lineNum="59" parent="globals/WeatherData" pc="268438899" symbol="requestUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="28" lineNum="60" parent="globals/WeatherData" pc="268438908" symbol="requestUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="34" parent="globals/WeatherData" pc="268438927" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="35" parent="globals/WeatherData" pc="268438929" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="36" parent="globals/WeatherData" pc="268438940" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="37" parent="globals/WeatherData" pc="268438961" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="38" parent="globals/WeatherData" pc="268438976" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="39" parent="globals/WeatherData" pc="268439010" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="41" parent="globals/WeatherData" pc="268439020" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="42" parent="globals/WeatherData" pc="268439049" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="43" parent="globals/WeatherData" pc="268439078" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="44" parent="globals/WeatherData" pc="268439092" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="45" parent="globals/WeatherData" pc="268439105" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="46" parent="globals/WeatherData" pc="268439115" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="50" parent="globals/WeatherData" pc="268439142" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="29" lineNum="52" parent="globals/WeatherData" pc="268439166" symbol="onReceive"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="30" lineNum="62" parent="globals/WeatherData" pc="268439185" symbol="makeRequest"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="30" lineNum="63" parent="globals/WeatherData" pc="268439189" symbol="makeRequest"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="30" lineNum="65" parent="globals/WeatherData" pc="268439196" symbol="makeRequest"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="30" lineNum="68" parent="globals/WeatherData" pc="268439204" symbol="makeRequest"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="30" lineNum="77" parent="globals/WeatherData" pc="268439265" symbol="makeRequest"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="31" lineNum="95" parent="globals/WeatherData" pc="268439304" symbol="getCurQNH"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="31" lineNum="96" parent="globals/WeatherData" pc="268439306" symbol="getCurQNH"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="32" lineNum="141" parent="globals/WeatherData" pc="268439343" symbol="getMinValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="32" lineNum="142" parent="globals/WeatherData" pc="268439347" symbol="getMinValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="32" lineNum="143" parent="globals/WeatherData" pc="268439354" symbol="getMinValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="32" lineNum="144" parent="globals/WeatherData" pc="268439378" symbol="getMinValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="32" lineNum="145" parent="globals/WeatherData" pc="268439389" symbol="getMinValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="32" lineNum="148" parent="globals/WeatherData" pc="268439412" symbol="getMinValue"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="33" lineNum="128" parent="globals/WeatherData" pc="268439415" symbol="setGlanceBitmap"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="33" lineNum="129" parent="globals/WeatherData" pc="268439417" symbol="setGlanceBitmap"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="34" lineNum="98" parent="globals/WeatherData" pc="268439428" symbol="getCurTemperature"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="34" lineNum="99" parent="globals/WeatherData" pc="268439430" symbol="getCurTemperature"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="35" lineNum="16" parent="globals/WeatherData" pc="268439467" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="35" lineNum="19" parent="globals/WeatherData" pc="268439469" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="35" lineNum="20" parent="globals/WeatherData" pc="268439497" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="35" lineNum="21" parent="globals/WeatherData" pc="268439525" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="35" lineNum="22" parent="globals/WeatherData" pc="268439535" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="36" lineNum="116" parent="globals/WeatherData" pc="268439548" symbol="getTemperatureHistogram"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WeatherData.mc" id="36" lineNum="117" parent="globals/WeatherData" pc="268439550" symbol="getTemperatureHistogram"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="37" lineNum="30" parent="globals" pc="268439573" symbol="getApp"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationApp.mc" id="37" lineNum="31" parent="globals" pc="268439583" symbol="getApp"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="38" lineNum="6" parent="globals/WetterstationView" pc="268439599" symbol="&lt;init&gt;"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="39" lineNum="109" parent="globals/WetterstationView" pc="268439618" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="39" lineNum="110" parent="globals/WetterstationView" pc="268439620" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="39" lineNum="111" parent="globals/WetterstationView" pc="268439649" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="39" lineNum="112" parent="globals/WetterstationView" pc="268439683" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="39" lineNum="113" parent="globals/WetterstationView" pc="268439724" symbol="onShow"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="40" lineNum="15" parent="globals/WetterstationView" pc="268439748" symbol="onLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="40" lineNum="16" parent="globals/WetterstationView" pc="268439750" symbol="onLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="40" lineNum="17" parent="globals/WetterstationView" pc="268439782" symbol="onLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="40" lineNum="18" parent="globals/WetterstationView" pc="268439826" symbol="onLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="40" lineNum="19" parent="globals/WetterstationView" pc="268439858" symbol="onLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="41" lineNum="10" parent="globals/WetterstationView" pc="268439903" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="41" lineNum="11" parent="globals/WetterstationView" pc="268439905" symbol="initialize"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="42" lineNum="124" parent="globals/WetterstationView" pc="268439924" symbol="onHide"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="42" lineNum="125" parent="globals/WetterstationView" pc="268439926" symbol="onHide"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="42" lineNum="126" parent="globals/WetterstationView" pc="268439949" symbol="onHide"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="42" lineNum="127" parent="globals/WetterstationView" pc="268439962" symbol="onHide"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="24" parent="globals/WetterstationView" pc="268439984" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="26" parent="globals/WetterstationView" pc="268439988" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="27" parent="globals/WetterstationView" pc="268440008" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="28" parent="globals/WetterstationView" pc="268440079" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="29" parent="globals/WetterstationView" pc="268440113" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="30" parent="globals/WetterstationView" pc="268440141" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="31" parent="globals/WetterstationView" pc="268440169" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="32" parent="globals/WetterstationView" pc="268440176" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="33" parent="globals/WetterstationView" pc="268440183" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="34" parent="globals/WetterstationView" pc="268440190" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="35" parent="globals/WetterstationView" pc="268440197" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="37" parent="globals/WetterstationView" pc="268440204" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="39" parent="globals/WetterstationView" pc="268440215" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="40" parent="globals/WetterstationView" pc="268440222" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="41" parent="globals/WetterstationView" pc="268440269" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="43" parent="globals/WetterstationView" pc="268440319" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="45" parent="globals/WetterstationView" pc="268440330" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="46" parent="globals/WetterstationView" pc="268440337" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="47" parent="globals/WetterstationView" pc="268440384" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="49" parent="globals/WetterstationView" pc="268440434" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="51" parent="globals/WetterstationView" pc="268440445" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="52" parent="globals/WetterstationView" pc="268440452" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="53" parent="globals/WetterstationView" pc="268440499" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="55" parent="globals/WetterstationView" pc="268440549" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="57" parent="globals/WetterstationView" pc="268440560" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="58" parent="globals/WetterstationView" pc="268440567" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="59" parent="globals/WetterstationView" pc="268440614" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="61" parent="globals/WetterstationView" pc="268440664" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="63" parent="globals/WetterstationView" pc="268440675" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="64" parent="globals/WetterstationView" pc="268440682" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="65" parent="globals/WetterstationView" pc="268440729" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="69" parent="globals/WetterstationView" pc="268440779" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="70" parent="globals/WetterstationView" pc="268440786" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="71" parent="globals/WetterstationView" pc="268440833" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="76" parent="globals/WetterstationView" pc="268440880" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="77" parent="globals/WetterstationView" pc="268440888" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="78" parent="globals/WetterstationView" pc="268440937" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="79" parent="globals/WetterstationView" pc="268440986" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="80" parent="globals/WetterstationView" pc="268441047" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="81" parent="globals/WetterstationView" pc="268441090" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="84" parent="globals/WetterstationView" pc="268441139" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="85" parent="globals/WetterstationView" pc="268441173" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="86" parent="globals/WetterstationView" pc="268441207" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="87" parent="globals/WetterstationView" pc="268441225" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="88" parent="globals/WetterstationView" pc="268441238" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="89" parent="globals/WetterstationView" pc="268441251" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="90" parent="globals/WetterstationView" pc="268441315" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="94" parent="globals/WetterstationView" pc="268441392" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="95" parent="globals/WetterstationView" pc="268441406" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="96" parent="globals/WetterstationView" pc="268441428" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="97" parent="globals/WetterstationView" pc="268441531" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="98" parent="globals/WetterstationView" pc="268441610" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="43" lineNum="99" parent="globals/WetterstationView" pc="268441624" symbol="onUpdate"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="44" lineNum="117" parent="globals/WetterstationView" pc="268441716" symbol="timerCallback"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\source\\WetterstationView.mc" id="44" lineNum="118" parent="globals/WetterstationView" pc="268441718" symbol="timerCallback"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="45" lineNum="7" parent="globals/Rez" pc="268441737" symbol="&lt;init&gt;"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="46" lineNum="30" parent="globals/Rez/Layouts" pc="268441761" symbol="MainLayout_Epix"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="46" lineNum="31" parent="globals/Rez/Layouts" pc="268441771" symbol="MainLayout_Epix"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="47" lineNum="24" parent="globals/Rez/Layouts" pc="268441778" symbol="GlanceLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="47" lineNum="25" parent="globals/Rez/Layouts" pc="268441790" symbol="GlanceLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="47" lineNum="27" parent="globals/Rez/Layouts" pc="268441895" symbol="GlanceLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="48" lineNum="34" parent="globals/Rez/Layouts" pc="268441912" symbol="MainLayout"/>
+        <entry filename="E:\\Work\\Weatherstation-Garmin\\bin\\gen\\006-B4314-00\\source\\Rez.mcgen" id="48" lineNum="35" parent="globals/Rez/Layouts" pc="268441922" symbol="MainLayout"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="31" method="true" symbol="getRainHistogram"/>
+        <entry id="22" method="true" symbol="getCurTemperature"/>
+        <entry id="8390043" method="true" symbol="setMode"/>
+        <entry id="52" method="true" symbol="GlanceLayout"/>
+        <entry id="9" module="true" symbol="globals/WeatherData/&lt;statics&gt;"/>
+        <entry field="true" id="14" symbol="refreshTimer"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="7" module="true" symbol="globals/Rez/Menus"/>
+        <entry id="53" method="true" symbol="MainLayout"/>
+        <entry field="true" id="37" symbol="lastUpdateTime"/>
+        <entry id="8390424" module="true" symbol="Storage"/>
+        <entry id="11" object="true" symbol="WetterstationApp"/>
+        <entry id="21" method="true" symbol="getCurSolarRadiation"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry id="54" method="true" symbol="MainLayout_Epix"/>
+        <entry field="true" id="55" symbol="AppName"/>
+        <entry id="28" method="true" symbol="getMaxValue"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8389594" symbol="headers"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry id="8389345" symbol="rezId"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="18" method="true" symbol="getCurHumidity"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="51" symbol="id_monkey"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="19" method="true" symbol="getCurQNH"/>
+        <entry field="true" id="50" symbol="WindyIcon"/>
+        <entry id="10" object="true" symbol="WeatherData"/>
+        <entry id="8389026" method="true" symbol="requestUpdate"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry field="true" id="15" symbol="sd"/>
+        <entry id="34" method="true" symbol="getWindSpeedHistogram"/>
+        <entry id="27" method="true" symbol="getGlanceBitmap"/>
+        <entry field="true" id="8389067" symbol="height"/>
+        <entry id="25" method="true" symbol="getCurWindSpeed"/>
+        <entry id="45" module="true" symbol="Menus"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry field="true" id="8389066" symbol="width"/>
+        <entry id="26" method="true" symbol="getData"/>
+        <entry field="true" id="43" symbol="instance"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="46" symbol="CloudyIcon"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry id="38" method="true" symbol="makeRequest"/>
+        <entry field="true" id="8390041" method="true" symbol="mode"/>
+        <entry id="5" module="true" symbol="globals/Rez/JsonData"/>
+        <entry field="true" id="49" symbol="SunIcon"/>
+        <entry id="8388637" module="true" symbol="Communications"/>
+        <entry id="13" object="true" symbol="WetterstationView"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8389844" symbol="responseType"/>
+        <entry id="29" method="true" symbol="getMinValue"/>
+        <entry id="8388786" method="true" symbol="method"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry field="true" id="17" symbol="forceRefreshOnReload"/>
+        <entry field="true" id="48" symbol="RainIcon"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="39" method="true" symbol="onReceive"/>
+        <entry id="16" method="true" symbol="timerCallback"/>
+        <entry id="8391770" method="true" symbol="createBufferedBitmap"/>
+        <entry id="23" method="true" symbol="getCurWindDirection"/>
+        <entry id="30" method="true" symbol="getMode"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="20" method="true" symbol="getCurRain"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry id="42" method="true" symbol="getWeatherData"/>
+        <entry field="true" id="35" symbol="glanceBitmap"/>
+        <entry field="true" id="47" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="32" method="true" symbol="getTemperatureHistogram"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="41" symbol="view"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry id="40" method="true" symbol="setGlanceBitmap"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="12" object="true" symbol="WetterstationGlanceView"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="44" module="true" symbol="Layouts"/>
+        <entry id="33" method="true" symbol="getWindGustsHistogram"/>
+        <entry id="4" module="true" symbol="globals/Rez/Fonts"/>
+        <entry id="24" method="true" symbol="getCurWindGusts"/>
+        <entry id="8391457" method="true" symbol="getGlanceView"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry field="true" id="36" symbol="lastData"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268438319" name="dc" stackId="1" startPc="268435874"/>
+        <entry endPc="268438273" name="mode" stackId="2" startPc="268435991"/>
+        <entry endPc="268438273" name="bitmapOpts" stackId="3" startPc="268435991"/>
+        <entry endPc="268438273" name="bitmap" stackId="4" startPc="268435991"/>
+        <entry endPc="268438273" name="bitmapDc" stackId="5" startPc="268435991"/>
+        <entry endPc="268438273" name="temperature" stackId="6" startPc="268435991"/>
+        <entry endPc="268438273" name="curvalue" stackId="7" startPc="268435991"/>
+        <entry endPc="268438273" name="histogram" stackId="8" startPc="268435991"/>
+        <entry endPc="268438273" name="linecolor" stackId="9" startPc="268435991"/>
+        <entry endPc="268438273" name="gridInterval" stackId="10" startPc="268435991"/>
+        <entry endPc="268438273" name="maxValue" stackId="11" startPc="268435991"/>
+        <entry endPc="268438273" name="minValue" stackId="12" startPc="268435991"/>
+        <entry endPc="268438273" name="offset" stackId="13" startPc="268435991"/>
+        <entry endPc="268438273" name="dataoffset" stackId="14" startPc="268435991"/>
+        <entry endPc="268436851" name="a" stackId="15" startPc="268436728"/>
+        <entry endPc="268436841" name="y" stackId="16" startPc="268436728"/>
+        <entry endPc="268437092" name="x" stackId="17" startPc="268437048"/>
+        <entry endPc="268438273" name="zoomFactor" stackId="18" startPc="268435991"/>
+        <entry endPc="268437677" name="x" stackId="19" startPc="268437172"/>
+        <entry endPc="268437664" name="alpha" stackId="20" startPc="268437172"/>
+        <entry endPc="268437664" name="height" stackId="21" startPc="268437172"/>
+        <entry endPc="268438030" name="x" stackId="22" startPc="268437744"/>
+        <entry endPc="268438017" name="heightprev" stackId="23" startPc="268437744"/>
+        <entry endPc="268438017" name="height" stackId="24" startPc="268437744"/>
+        <entry endPc="268438273" name="dim" stackId="25" startPc="268435991"/>
+        <entry arg="true" endPc="268438437" name="histogram" stackId="1" startPc="268438366"/>
+        <entry endPc="268438437" name="maxValue" stackId="2" startPc="268438370"/>
+        <entry endPc="268438434" name="i" stackId="3" startPc="268438401"/>
+        <entry arg="true" endPc="268438837" name="m" stackId="1" startPc="268438825"/>
+        <entry arg="true" endPc="268439184" name="responseCode" stackId="1" startPc="268438927"/>
+        <entry arg="true" endPc="268439184" name="data" stackId="2" startPc="268438927"/>
+        <entry endPc="268439302" name="url" stackId="1" startPc="268439189"/>
+        <entry endPc="268439302" name="params" stackId="2" startPc="268439189"/>
+        <entry endPc="268439302" name="options" stackId="3" startPc="268439189"/>
+        <entry arg="true" endPc="268439414" name="histogram" stackId="1" startPc="268439343"/>
+        <entry endPc="268439414" name="minValue" stackId="2" startPc="268439347"/>
+        <entry endPc="268439411" name="i" stackId="3" startPc="268439378"/>
+        <entry arg="true" endPc="268439427" name="bitmap" stackId="1" startPc="268439415"/>
+        <entry arg="true" endPc="268439902" name="dc" stackId="1" startPc="268439748"/>
+        <entry arg="true" endPc="268441715" name="dc" stackId="1" startPc="268439984"/>
+        <entry endPc="268441711" name="angle" stackId="2" startPc="268440079"/>
+        <entry endPc="268441711" name="windspeedkmh" stackId="3" startPc="268440079"/>
+        <entry endPc="268441711" name="windgustkmh" stackId="4" startPc="268440079"/>
+        <entry endPc="268441711" name="arrowheight" stackId="5" startPc="268440079"/>
+        <entry endPc="268441711" name="arrowimagewidth" stackId="6" startPc="268440079"/>
+        <entry endPc="268441711" name="arrowimageheight" stackId="7" startPc="268440079"/>
+        <entry endPc="268441711" name="thickness" stackId="8" startPc="268440079"/>
+        <entry endPc="268441711" name="sizefactor" stackId="9" startPc="268440079"/>
+        <entry endPc="268441711" name="coord" stackId="10" startPc="268440079"/>
+        <entry endPc="268441711" name="xoffset" stackId="11" startPc="268440079"/>
+        <entry endPc="268441711" name="yoffset" stackId="12" startPc="268440079"/>
+        <entry endPc="268441391" name="i" stackId="13" startPc="268441225"/>
+        <entry endPc="268441378" name="x" stackId="14" startPc="268441225"/>
+        <entry endPc="268441378" name="y" stackId="15" startPc="268441225"/>
+        <entry arg="true" endPc="268441777" name="dc" stackId="1" startPc="268441761"/>
+        <entry arg="true" endPc="268441911" name="dc" stackId="1" startPc="268441778"/>
+        <entry endPc="268441911" name="rez_cmp_local_bitmap_id_monkey" stackId="2" startPc="268441790"/>
+        <entry arg="true" endPc="268441928" name="dc" stackId="1" startPc="268441912"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getCurHumidity"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="glanceBitmap"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getMinValue"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="SunIcon"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getData"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="lastData"/>
+        <annotationEntry annotation="glance" class="WetterstationGlanceView" module="globals" symbol="initialize"/>
+        <annotationEntry annotation="glance" class="WetterstationApp" module="globals" symbol="onStop"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getRainHistogram"/>
+        <annotationEntry annotation="glance" class="WetterstationGlanceView" module="globals" symbol="onUpdate"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getCurTemperature"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="setGlanceBitmap"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getTemperatureHistogram"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="instance"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="makeRequest"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getWindGustsHistogram"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="CloudyIcon"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getCurRain"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getCurWindDirection"/>
+        <annotationEntry annotation="glance" class="WetterstationGlanceView" module="globals" symbol="onHide"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getWindSpeedHistogram"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getMaxValue"/>
+        <annotationEntry annotation="glance" class="WetterstationApp" module="globals" symbol="onStart"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getCurWindSpeed"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="view"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="mode"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="onReceive"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getCurQNH"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="id_monkey"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getCurSolarRadiation"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="setMode"/>
+        <annotationEntry annotation="glance" class="WetterstationApp" module="globals" symbol="getInitialView"/>
+        <annotationEntry annotation="glance" class="WetterstationApp" module="globals" symbol="getGlanceView"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="glance" class="WetterstationGlanceView" module="globals" symbol="sd"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="forceRefreshOnReload"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getCurWindGusts"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getGlanceBitmap"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getWeatherData"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="initialize"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="requestUpdate"/>
+        <annotationEntry annotation="glance" class="WetterstationApp" module="globals" symbol="initialize"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="WindyIcon"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="RainIcon"/>
+        <annotationEntry annotation="glance" class="WetterstationGlanceView" module="globals" symbol="onShow"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="lastUpdateTime"/>
+        <annotationEntry annotation="glance" class="WetterstationGlanceView" module="globals" symbol="refreshTimer"/>
+        <annotationEntry annotation="glance" class="WeatherData" module="globals" symbol="getMode"/>
+        <annotationEntry annotation="glance" class="WetterstationGlanceView" module="globals" symbol="timerCallback"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="95" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/WetterstationApp" offset="182" parentId="globals" symbolId="WetterstationApp" type="class"/>
+        <dataEntry label="globals/WetterstationGlanceView" offset="261" parentId="globals" symbolId="WetterstationGlanceView" type="class"/>
+        <dataEntry label="globals/WeatherData" offset="356" parentId="globals" symbolId="WeatherData" type="class"/>
+        <dataEntry label="globals/WeatherData/&lt;statics&gt;" offset="627" parentId="WeatherData" symbolId="&lt;statics&gt;" type="module"/>
+        <dataEntry label="globals/WetterstationView" offset="1780" parentId="globals" symbolId="WetterstationView" type="class"/>
+        <dataEntry label="globals/Rez" offset="1883" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="1962" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="2041" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="2096" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="2127" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="2158" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="2197" parentId="Rez" symbolId="JsonData" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435478" name="&lt;init&gt;" parent="WetterstationApp" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435481" name="onStart" parent="WetterstationApp" startPc="268435479">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435524" name="getInitialView" parent="WetterstationApp" startPc="268435482">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435545" name="initialize" parent="WetterstationApp" startPc="268435525">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435588" name="getGlanceView" parent="WetterstationApp" startPc="268435546">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435591" name="onStop" parent="WetterstationApp" startPc="268435589">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435610" name="&lt;init&gt;" parent="WetterstationGlanceView" startPc="268435592">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435740" name="onShow" parent="WetterstationGlanceView" startPc="268435611">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435813" name="initialize" parent="WetterstationGlanceView" startPc="268435741">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435873" name="onHide" parent="WetterstationGlanceView" startPc="268435814">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438319" name="onUpdate" parent="WetterstationGlanceView" startPc="268435874">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438340" name="timerCallback" parent="WetterstationGlanceView" startPc="268438320">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="WeatherData">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="globals/WeatherData">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438365" name="getWindSpeedHistogram" parent="WeatherData" startPc="268438341">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438437" name="getMaxValue" parent="WeatherData" startPc="268438366">
+            <param id="histogram"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438476" name="getCurHumidity" parent="WeatherData" startPc="268438438">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438501" name="getWindGustsHistogram" parent="WeatherData" startPc="268438477">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438526" name="getRainHistogram" parent="WeatherData" startPc="268438502">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438537" name="getGlanceBitmap" parent="WeatherData" startPc="268438527">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438576" name="getCurRain" parent="WeatherData" startPc="268438538">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438651" name="getWeatherData" parent="WeatherData" startPc="268438577">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438685" name="getCurWindDirection" parent="WeatherData" startPc="268438652">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438696" name="getMode" parent="WeatherData" startPc="268438686">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438735" name="getCurSolarRadiation" parent="WeatherData" startPc="268438697">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438774" name="getCurWindGusts" parent="WeatherData" startPc="268438736">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438785" name="getData" parent="WeatherData" startPc="268438775">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438824" name="getCurWindSpeed" parent="WeatherData" startPc="268438786">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438837" name="setMode" parent="WeatherData" startPc="268438825">
+            <param id="m"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438926" name="requestUpdate" parent="WeatherData" startPc="268438838">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439184" name="onReceive" parent="WeatherData" startPc="268438927">
+            <param id="responseCode"/>
+            <param id="data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268439303" name="makeRequest" parent="WeatherData" startPc="268439185">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439342" name="getCurQNH" parent="WeatherData" startPc="268439304">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439414" name="getMinValue" parent="WeatherData" startPc="268439343">
+            <param id="histogram"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439427" name="setGlanceBitmap" parent="WeatherData" startPc="268439415">
+            <param id="bitmap"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439466" name="getCurTemperature" parent="WeatherData" startPc="268439428">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439547" name="initialize" parent="WeatherData" startPc="268439467">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439572" name="getTemperatureHistogram" parent="WeatherData" startPc="268439548">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439598" name="getApp" startPc="268439573">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439617" name="&lt;init&gt;" parent="WetterstationView" startPc="268439599">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439747" name="onShow" parent="WetterstationView" startPc="268439618">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439902" name="onLayout" parent="WetterstationView" startPc="268439748">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439923" name="initialize" parent="WetterstationView" startPc="268439903">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439983" name="onHide" parent="WetterstationView" startPc="268439924">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441715" name="onUpdate" parent="WetterstationView" startPc="268439984">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441736" name="timerCallback" parent="WetterstationView" startPc="268441716">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441760" name="&lt;init&gt;" parent="Rez" startPc="268441737">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="JsonData">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441777" name="MainLayout_Epix" parent="Layouts" startPc="268441761">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441911" name="GlanceLayout" parent="Layouts" startPc="268441778">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441928" name="MainLayout" parent="Layouts" startPc="268441912">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

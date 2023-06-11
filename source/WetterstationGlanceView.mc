@@ -107,7 +107,11 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                 }
 
                 // Fill shaded area under the curve
-                for (var x = 0; x < histogram.size()*2-dataoffset; x++) {
+                var zoomFactor = 2.0;
+                if (System.getDeviceSettings().screenHeight > 416) {
+                    zoomFactor = 2.25;
+                }
+                for (var x = 0; x < histogram.size()*zoomFactor-dataoffset; x++) {
                     var alpha = 30 + (x/2);
                     if (mode <= 2) {
                	        bitmapDc.setFill(Graphics.createColor(alpha, 255, 255, 0));
@@ -119,7 +123,7 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                	        bitmapDc.setFill(Graphics.createColor(alpha, 0, 0, 255));
        	                bitmapDc.setStroke(Graphics.createColor(alpha, 0, 0, 255));
                     }
-                    var height = histogram[(x+dataoffset)/2].toFloat() / maxValue.toFloat() * (dc.getHeight().toFloat() - 2.0f);
+                    var height = histogram[((x+dataoffset)/zoomFactor).toNumber()].toFloat() / maxValue.toFloat() * (dc.getHeight().toFloat() - 2.0f);
                     if (height < 0) {
                         height = 0;
                     }
@@ -130,9 +134,9 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                 bitmapDc.setPenWidth(2);
         	    bitmapDc.setColor(linecolor, Graphics.COLOR_BLACK);
 
-                for (var x = 1; x < histogram.size()*2-dataoffset; x+=2) {
-                    var heightprev = histogram[(x+dataoffset-2)/2].toFloat() / maxValue.toFloat() * (dc.getHeight().toFloat() - 2.0f);
-                    var height = histogram[(x+dataoffset)/2].toFloat() / maxValue.toFloat() * dc.getHeight().toFloat() - 2.0f;
+                for (var x = 1; x < histogram.size()*zoomFactor-dataoffset; x+=2) {
+                    var heightprev = histogram[((x+dataoffset-2)/zoomFactor).toNumber()].toFloat() / maxValue.toFloat() * (dc.getHeight().toFloat() - 2.0f);
+                    var height = histogram[((x+dataoffset)/zoomFactor).toNumber()].toFloat() / maxValue.toFloat() * dc.getHeight().toFloat() - 2.0f;
                     if (heightprev < 0) {
                         heightprev = 0;
                     }

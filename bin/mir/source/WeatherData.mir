@@ -1,0 +1,584 @@
+[ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 1; ]
+import Toybox.System;
+[ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 2; ]
+import Toybox.Communications;
+[ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 3; ]
+import Toybox.Lang;
+[ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 4; ]
+import Toybox.Application.Storage;
+[ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 6; glance = true; ]
+class WeatherData{
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 8; @position = 15; ]
+    static
+    var instance = null;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 9; @position = 8; ]
+    var lastData;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 10; @position = 8; ]
+    var lastUpdateTime = 0;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 11; @position = 8; ]
+    var view;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 12; @position = 8; ]
+    var glanceBitmap = null;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 13; @position = 8; ]
+    var forceRefreshOnReload = false;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 14; @position = 8; ]
+    var mode = 5;
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 16; ]
+    function initialize() as Void {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_16_26_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 19 8 ]
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        %tmp.2 = getv function %tmp.1 :getValue;
+        %tmp.3 = "lastStationData";
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        putv self :lastData %tmp.4;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 20 8 ]
+        %tmp.5 = getm $.Toybox.Application.Storage;
+        %tmp.6 = getv function %tmp.5 :getValue;
+        %tmp.7 = "lastWeatherDataTime";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        putv self :lastUpdateTime %tmp.8;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 21 8 ]
+        %tmp.9 = true;
+        putv self :forceRefreshOnReload %tmp.9;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 22 8 ]
+        %tmp.10 = self;
+        %tmp.11 = getv function %tmp.10 :makeRequest;
+        invoke %tmp.10 %tmp.11();
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_16_26_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 25; ]
+    function setMode(m) {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_25_24_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 26 8 ]
+        %tmp.2 = lgetv %m;
+        putv self :mode %tmp.2;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_25_24_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 29; ]
+    function getMode() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_29_23_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 30 8 ]
+        %tmp.2 = getv ? :mode;
+        ret %tmp.2;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_29_23_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 34; ]
+    function onReceive(responseCode as Number, data as Dictionary or String or Null) as Void {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_34_93_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 35 8 ]
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_35_8_if_stmt:
+        %tmp.2 = lgetv %responseCode;
+        %tmp.3 = 200;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_35_8_if_false;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_35_8_if_true:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_35_33_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 36 12 ]
+        %tmp.5 = getm $.Toybox.System;
+        %tmp.6 = getv function %tmp.5 :println;
+        %tmp.7 = "Request Successful";
+        invoke %tmp.5 %tmp.6(%tmp.7);
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 37 12 ]
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_37_12_if_stmt:
+        %tmp.8 = lgetv %data;
+        %tmp.9 = getv function %tmp.8 :isEmpty;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = not %tmp.10;
+        bf %tmp.11 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_37_12_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_37_12_if_true:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_37_33_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 38 16 ]
+        %tmp.13 = getv ? :Time;
+        %tmp.14 = getv function %tmp.13 :now;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        %tmp.16 = getv function %tmp.15 :value;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        putv self :lastUpdateTime %tmp.17;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 39 16 ]
+        %tmp.19 = lgetv %data;
+        putv self :lastData %tmp.19;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 41 16 ]
+        %tmp.20 = getm $.Toybox.Application.Storage;
+        %tmp.21 = getv function %tmp.20 :setValue;
+        %tmp.22 = "lastStationData";
+        %tmp.24 = getv ? :lastData;
+        invoke %tmp.20 %tmp.21(%tmp.22, %tmp.24);
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 42 16 ]
+        %tmp.25 = getm $.Toybox.Application.Storage;
+        %tmp.26 = getv function %tmp.25 :setValue;
+        %tmp.27 = "lastWeatherDataTime";
+        %tmp.29 = getv ? :lastUpdateTime;
+        invoke %tmp.25 %tmp.26(%tmp.27, %tmp.29);
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 43 16 ]
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_43_16_if_stmt:
+        %tmp.31 = getv ? :forceRefreshOnReload;
+        %tmp.32 = true;
+        %tmp.33 = eq %tmp.31 %tmp.32;
+        bf %tmp.33 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_43_16_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_43_16_if_true:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_43_50_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 44 20 ]
+        %tmp.34 = 5;
+        putv self :mode %tmp.34;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 45 20 ]
+        %tmp.35 = false;
+        putv self :forceRefreshOnReload %tmp.35;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 46 20 ]
+        %tmp.37 = getv ? :WatchUi;
+        %tmp.38 = getv function %tmp.37 :requestUpdate;
+        invoke %tmp.37 %tmp.38();
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_43_50_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_43_16_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_43_16_if_end:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_37_33_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_37_12_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_37_12_if_end:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_35_33_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_35_8_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_35_8_if_false:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_49_15_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 50 12 ]
+        %tmp.39 = getm $.Toybox.System;
+        %tmp.40 = getv function %tmp.39 :println;
+        %tmp.41 = "Response: ";
+        %tmp.43 = lgetv %responseCode;
+        %tmp.44 = add %tmp.41 %tmp.43;
+        invoke %tmp.39 %tmp.40(%tmp.44);
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_49_15_stop:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_35_8_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 52 8 ]
+        %tmp.46 = getv ? :WatchUi;
+        %tmp.47 = getv function %tmp.46 :requestUpdate;
+        invoke %tmp.46 %tmp.47();
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_34_93_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 55; ]
+    public
+    function requestUpdate() as Void {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_55_43_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 56 8 ]
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_56_8_if_stmt:
+        %tmp.2 = getv ? :Time;
+        %tmp.3 = getv function %tmp.2 :now;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = getv function %tmp.4 :value;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.8 = getv ? :lastUpdateTime;
+        %tmp.9 = 20;
+        %tmp.10 = add %tmp.8 %tmp.9;
+        %tmp.11 = gt %tmp.6 %tmp.10;
+        bf %tmp.11 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_56_8_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_56_8_if_true:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_56_54_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 57 12 ]
+        %tmp.12 = self;
+        %tmp.13 = getv function %tmp.12 :makeRequest;
+        invoke %tmp.12 %tmp.13();
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_56_54_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_56_8_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_56_8_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 59 8 ]
+        %tmp.14 = null;
+        putv self :glanceBitmap %tmp.14;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 60 8 ]
+        %tmp.16 = getv ? :WatchUi;
+        %tmp.17 = getv function %tmp.16 :requestUpdate;
+        invoke %tmp.16 %tmp.17();
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_55_43_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 62; ]
+    protected
+    function makeRequest() as Void {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_62_45_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 63 8 ]
+        [ "E_Work_Weatherstation_Garmin_source_WeatherData_mc_62_45_start" "E_Work_Weatherstation_Garmin_source_WeatherData_mc_62_45_stop" ]
+        %url.1 = local;
+        %tmp.1 = "https://167dgn.airforce/queryWeather";
+        lputv %url.1 %tmp.1;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 65 8 ]
+        [ "E_Work_Weatherstation_Garmin_source_WeatherData_mc_62_45_start" "E_Work_Weatherstation_Garmin_source_WeatherData_mc_62_45_stop" ]
+        %params.2 = local;
+        %tmp.2 = newd 0;
+        lputv %params.2 %tmp.2;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 68 8 ]
+        [ "E_Work_Weatherstation_Garmin_source_WeatherData_mc_62_45_start" "E_Work_Weatherstation_Garmin_source_WeatherData_mc_62_45_stop" ]
+        %options.3 = local;
+        %tmp.3 = newd 3;
+        %tmp.5 = const :method;
+        %tmp.6 = getm $.Toybox.Communications;
+        %tmp.7 = getv %tmp.6 :HTTP_REQUEST_METHOD_GET;
+        %tmp.8 = dup %tmp.3;
+        %tmp.9 = aputv %tmp.8 %tmp.5 %tmp.7;
+        %tmp.11 = const :headers;
+        %tmp.12 = newd 1;
+        %tmp.13 = "Content-Type";
+        %tmp.14 = getm $.Toybox.Communications;
+        %tmp.15 = getv %tmp.14 :REQUEST_CONTENT_TYPE_URL_ENCODED;
+        %tmp.16 = dup %tmp.12;
+        %tmp.17 = aputv %tmp.16 %tmp.13 %tmp.15;
+        %tmp.18 = dup %tmp.9;
+        %tmp.19 = aputv %tmp.18 %tmp.11 %tmp.17;
+        %tmp.21 = const :responseType;
+        %tmp.22 = getm $.Toybox.Communications;
+        %tmp.23 = getv %tmp.22 :HTTP_RESPONSE_CONTENT_TYPE_JSON;
+        %tmp.24 = dup %tmp.19;
+        %tmp.25 = aputv %tmp.24 %tmp.21 %tmp.23;
+        lputv %options.3 %tmp.25;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 77 8 ]
+        %tmp.26 = getm $.Toybox.Communications;
+        %tmp.27 = getv function %tmp.26 :makeWebRequest;
+        %tmp.29 = lgetv %url.1;
+        %tmp.31 = lgetv %params.2;
+        %tmp.33 = lgetv %options.3;
+        %tmp.34 = self;
+        %tmp.35 = getv function %tmp.34 :method;
+        %tmp.37 = const :onReceive;
+        %tmp.38 = invoke %tmp.34 %tmp.35(%tmp.37);
+        invoke %tmp.26 %tmp.27(%tmp.29, %tmp.31, %tmp.33, %tmp.38);
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_62_45_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 80; ]
+    public
+    function getData() as Dictionary or Null {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_80_45_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 81 8 ]
+        %tmp.2 = getv ? :lastData;
+        ret %tmp.2;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_80_45_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 83; ]
+    public
+    function getCurWindDirection() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_83_42_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 84 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "curwinddir";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = getv function %tmp.5 :toNumber;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        ret %tmp.7;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_83_42_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 86; ]
+    public
+    function getCurWindSpeed() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_86_38_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 87 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "curwindspeed";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = getv function %tmp.5 :format;
+        %tmp.7 = "%.1f";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        ret %tmp.8;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_86_38_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 89; ]
+    public
+    function getCurWindGusts() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_89_38_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 90 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "curwindgust";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = getv function %tmp.5 :format;
+        %tmp.7 = "%.1f";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        ret %tmp.8;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_89_38_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 92; ]
+    public
+    function getCurRain() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_92_33_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 93 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "currain";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = getv function %tmp.5 :format;
+        %tmp.7 = "%.1f";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        ret %tmp.8;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_92_33_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 95; ]
+    public
+    function getCurQNH() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_95_32_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 96 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "curqnh";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = getv function %tmp.5 :format;
+        %tmp.7 = "%.2f";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        ret %tmp.8;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_95_32_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 98; ]
+    public
+    function getCurTemperature() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_98_40_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 99 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "curtemperature";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = getv function %tmp.5 :format;
+        %tmp.7 = "%.1f";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        ret %tmp.8;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_98_40_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 101; ]
+    public
+    function getCurHumidity() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_101_37_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 102 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "curhumidity";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = getv function %tmp.5 :format;
+        %tmp.7 = "%.1f";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        ret %tmp.8;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_101_37_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 104; ]
+    public
+    function getCurSolarRadiation() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_104_43_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 105 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "cursolarradiation";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = getv function %tmp.5 :format;
+        %tmp.7 = "%.2f";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        ret %tmp.8;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_104_43_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 107; ]
+    public
+    function getWindSpeedHistogram() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_107_44_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 108 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "windspeeds";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        ret %tmp.5;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_107_44_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 110; ]
+    public
+    function getWindGustsHistogram() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_110_44_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 111 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "windgusts";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        ret %tmp.5;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_110_44_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 113; ]
+    public
+    function getRainHistogram() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_113_39_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 114 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "rain";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        ret %tmp.5;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_113_39_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 116; ]
+    public
+    function getTemperatureHistogram() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_116_46_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 117 8 ]
+        %tmp.2 = getv ? :lastData;
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = "temperature";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        ret %tmp.5;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_116_46_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 124; ]
+    public
+    function getGlanceBitmap() as Toybox.Graphics.BufferedBitmap or Null {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_124_73_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 125 8 ]
+        %tmp.2 = getv ? :glanceBitmap;
+        ret %tmp.2;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_124_73_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 128; ]
+    public
+    function setGlanceBitmap(bitmap as Toybox.Graphics.BufferedBitmap or Null) {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_128_79_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 129 8 ]
+        %tmp.2 = lgetv %bitmap;
+        putv self :glanceBitmap %tmp.2;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_128_79_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 132; ]
+    public
+    function getMaxValue(histogram as Array<Number> or Null) as Number or Null {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_132_73_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 133 8 ]
+        [ "E_Work_Weatherstation_Garmin_source_WeatherData_mc_132_73_start" "E_Work_Weatherstation_Garmin_source_WeatherData_mc_132_73_stop" ]
+        %maxValue.1 = local;
+        %tmp.1 = 0;
+        lputv %maxValue.1 %tmp.1;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 134 8 ]
+        for @E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_test @E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_incr @E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_init:
+        [ "E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_begin" "E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_end" ]
+        %i.2 = local;
+        %tmp.2 = 0;
+        lputv %i.2 %tmp.2;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_test:
+        %tmp.4 = lgetv %i.2;
+        %tmp.5 = lgetv %histogram;
+        %tmp.6 = getv function %tmp.5 :size;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = lt %tmp.4 %tmp.7;
+        bf %tmp.8 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_begin:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_48_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 135 12 ]
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_135_12_if_stmt:
+        %tmp.10 = lgetv %histogram;
+        %tmp.12 = lgetv %i.2;
+        %tmp.13 = agetv %tmp.10 %tmp.12;
+        %tmp.15 = lgetv %maxValue.1;
+        %tmp.16 = gt %tmp.13 %tmp.15;
+        bf %tmp.16 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_135_12_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_135_12_if_true:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_135_41_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 136 16 ]
+        %tmp.18 = lgetv %histogram;
+        %tmp.20 = lgetv %i.2;
+        %tmp.21 = agetv %tmp.18 %tmp.20;
+        lputv %maxValue.1 %tmp.21;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_135_41_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_135_12_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_135_12_if_end:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_48_stop:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_incr:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 134 ]
+        %tmp.24 = lgetv %i.2;
+        %tmp.25 = add %tmp.24 1;
+        lputv %i.2 %tmp.25;
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_test;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_134_8_for_end:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 139 8 ]
+        %tmp.27 = lgetv %maxValue.1;
+        ret %tmp.27;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_132_73_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 141; ]
+    public
+    function getMinValue(histogram as Array<Number> or Null) as Number or Null {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_141_73_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 142 8 ]
+        [ "E_Work_Weatherstation_Garmin_source_WeatherData_mc_141_73_start" "E_Work_Weatherstation_Garmin_source_WeatherData_mc_141_73_stop" ]
+        %minValue.1 = local;
+        %tmp.1 = 0;
+        lputv %minValue.1 %tmp.1;
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 143 8 ]
+        for @E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_test @E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_incr @E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_init:
+        [ "E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_begin" "E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_end" ]
+        %i.2 = local;
+        %tmp.2 = 0;
+        lputv %i.2 %tmp.2;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_test:
+        %tmp.4 = lgetv %i.2;
+        %tmp.5 = lgetv %histogram;
+        %tmp.6 = getv function %tmp.5 :size;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = lt %tmp.4 %tmp.7;
+        bf %tmp.8 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_begin:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_48_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 144 12 ]
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_144_12_if_stmt:
+        %tmp.10 = lgetv %histogram;
+        %tmp.12 = lgetv %i.2;
+        %tmp.13 = agetv %tmp.10 %tmp.12;
+        %tmp.15 = lgetv %minValue.1;
+        %tmp.16 = lt %tmp.13 %tmp.15;
+        bf %tmp.16 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_144_12_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_144_12_if_true:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_144_41_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 145 16 ]
+        %tmp.18 = lgetv %histogram;
+        %tmp.20 = lgetv %i.2;
+        %tmp.21 = agetv %tmp.18 %tmp.20;
+        lputv %minValue.1 %tmp.21;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_144_41_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_144_12_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_144_12_if_end:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_48_stop:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_incr:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 143 ]
+        %tmp.24 = lgetv %i.2;
+        %tmp.25 = add %tmp.24 1;
+        lputv %i.2 %tmp.25;
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_test;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_143_8_for_end:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 148 8 ]
+        %tmp.27 = lgetv %minValue.1;
+        ret %tmp.27;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_141_73_stop:
+    }
+    [ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 151; ]
+    public static
+    function getWeatherData() {
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_151_44_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 152 8 ]
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_152_8_if_stmt:
+        %tmp.2 = getv ? :WeatherData;
+        %tmp.3 = getv %tmp.2 :instance;
+        %tmp.4 = null;
+        %tmp.5 = eq %tmp.3 %tmp.4;
+        bf %tmp.5 @E_Work_Weatherstation_Garmin_source_WeatherData_mc_152_8_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_152_8_if_true:
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_152_42_start:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 153 12 ]
+        %tmp.6 = getv self :WeatherData;
+        %tmp.10 = getv ? :WeatherData;
+        %tmp.7 = newc %tmp.10 ();
+        putv %tmp.6 :instance %tmp.7;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_152_42_stop:
+        goto @E_Work_Weatherstation_Garmin_source_WeatherData_mc_152_8_if_end;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_152_8_if_end:
+[ "E:\Work\Weatherstation-Garmin\source\WeatherData.mc" 155 8 ]
+        %tmp.12 = getv ? :WeatherData;
+        %tmp.13 = getv %tmp.12 :instance;
+        ret %tmp.13;
+E_Work_Weatherstation_Garmin_source_WeatherData_mc_151_44_stop:
+    }
+}
+[ @file = "E:\Work\Weatherstation-Garmin\source\WeatherData.mc"; @line = 1; ]
+<init> {
+}
