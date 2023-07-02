@@ -145,17 +145,25 @@ class WeatherData {
 
 
     public function getWebcamImage1() as Toybox.Graphics.BufferedBitmap? {
-        if (Time.now().value() > webcamImage1UpdateTime + 300) {
-            webcamImage1 = null;
-        }
         return webcamImage1;
     }
 
-    public function getWebcamImage2() as Toybox.Graphics.BufferedBitmap? {
-        if (Time.now().value() > webcamImage2UpdateTime + 300) {
-            webcamImage2 = null;
+    public function isWebcamImage1Current() as Boolean {
+        if (Time.now().value() > webcamImage1UpdateTime + 300) {
+            return false;
         }
+        return true;
+    }
+
+    public function getWebcamImage2() as Toybox.Graphics.BufferedBitmap? {
         return webcamImage2;
+    }
+
+    public function isWebcamImage2Current() as Boolean {
+        if (Time.now().value() > webcamImage2UpdateTime + 300) {
+            return false;
+        }
+        return true;
     }
 
     public function getMaxValue (histogram as Array<Number>?) as Number? {

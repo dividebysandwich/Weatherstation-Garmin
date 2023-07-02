@@ -73,7 +73,6 @@ class PageIndicator {
             } else {
                 dc.drawCircle(tempX, y, height / 2);
             }
-            System.println("circle: "+tempX.toString()+" "+y.toString());
         }
     }
 

@@ -80,7 +80,7 @@ class Webcam1View extends WatchUi.View {
     function onShow() as Void {
         sd = WeatherData.getWeatherData();
         WatchUi.requestUpdate();        
-        if (sd != null and sd.getWebcamImage1() == null) {
+        if (sd != null and (sd.getWebcamImage1() == null || sd.isWebcamImage1Current() == false)) {
             requestWebcamImage();
         }
     }
