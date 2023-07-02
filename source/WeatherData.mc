@@ -12,6 +12,10 @@ class WeatherData {
     var glanceBitmap = null;
     var forceRefreshOnReload = false;
     var mode = 5;
+    var webcamImage1 = null;
+    var webcamImage2 = null;
+    var webcamImage1UpdateTime = 0;
+    var webcamImage2UpdateTime = 0;
 
     function initialize() {
         // Get last data snapshot from application storage so we have something to show immediately on startup.
@@ -127,6 +131,31 @@ class WeatherData {
 
     public function setGlanceBitmap(bitmap as Toybox.Graphics.BufferedBitmap?) {
         glanceBitmap = bitmap;
+    }
+
+    public function setWebcamImage1(image as Toybox.Graphics.BufferedBitmap?) {
+        webcamImage1 = image;
+        webcamImage1UpdateTime = Time.now().value();
+    }
+
+    public function setWebcamImage2(image as Toybox.Graphics.BufferedBitmap?) {
+        webcamImage2 = image;
+        webcamImage2UpdateTime = Time.now().value();
+    }
+
+
+    public function getWebcamImage1() as Toybox.Graphics.BufferedBitmap? {
+        if (Time.now().value() > webcamImage1UpdateTime + 300) {
+            webcamImage1 = null;
+        }
+        return webcamImage1;
+    }
+
+    public function getWebcamImage2() as Toybox.Graphics.BufferedBitmap? {
+        if (Time.now().value() > webcamImage2UpdateTime + 300) {
+            webcamImage2 = null;
+        }
+        return webcamImage2;
     }
 
     public function getMaxValue (histogram as Array<Number>?) as Number? {

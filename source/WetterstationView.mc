@@ -12,11 +12,11 @@ class WetterstationView extends WatchUi.View {
 
     public function initialize() {
         View.initialize();
-        var size = 2;
-        var selected = Graphics.COLOR_DK_GRAY;
-        var notSelected = Graphics.COLOR_LT_GRAY;
-        var alignment = $.ALIGN_TOP_RIGHT;
-        var margin = 10;
+        var size = 3;
+        var notSelected = Graphics.COLOR_DK_GRAY;
+        var selected = Graphics.COLOR_LT_GRAY;
+        var alignment = $.ALIGN_BOTTOM_CENTER;
+        var margin = 3;
         _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
     }
 
@@ -102,7 +102,7 @@ class WetterstationView extends WatchUi.View {
             // Draw the arrow
             dc.fillPolygon(coord);
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(System.getDeviceSettings().screenWidth / 2, System.getDeviceSettings().screenHeight - 56, Graphics.FONT_SYSTEM_TINY, sd.getCurTemperature()+" °C", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(System.getDeviceSettings().screenWidth / 2, System.getDeviceSettings().screenHeight - 59, Graphics.FONT_SYSTEM_TINY, sd.getCurTemperature()+" °C", Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, sd.getCurWindSpeed()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
             if (windgustkmh > (windspeedkmh + 10.0)) {
                 dc.drawText(System.getDeviceSettings().screenWidth / 2, 40, Graphics.FONT_SYSTEM_TINY, "Gust "+sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);

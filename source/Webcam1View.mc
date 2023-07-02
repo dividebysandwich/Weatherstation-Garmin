@@ -5,20 +5,20 @@ import Toybox.Math;
 import Toybox.Lang;
 
 class Webcam1View extends WatchUi.View {
-    var webcamImage = null;
     var refreshTimer = null;
     var prevResponseCode = 200;
     var aspectRatio = 1.4;
+    var sd = null;
 
     private var _indicator as PageIndicator;
 
     public function initialize() {
         View.initialize();
-        var size = 2;
-        var selected = Graphics.COLOR_DK_GRAY;
-        var notSelected = Graphics.COLOR_LT_GRAY;
-        var alignment = $.ALIGN_TOP_RIGHT;
-        var margin = 10;
+        var size = 3;
+        var notSelected = Graphics.COLOR_DK_GRAY;
+        var selected = Graphics.COLOR_LT_GRAY;
+        var alignment = $.ALIGN_BOTTOM_CENTER;
+        var margin = 3;
         _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
     }
 
@@ -36,9 +36,9 @@ class Webcam1View extends WatchUi.View {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
         System.println("webcam1 view onUpdate");
-        if (webcamImage != null) {
+        if (sd != null and sd.getWebcamImage1() != null) {
             // Draw the arrow
-            dc.drawBitmap(0, (System.getDeviceSettings().screenHeight - (System.getDeviceSettings().screenHeight/aspectRatio)) / 2 , webcamImage); 
+            dc.drawBitmap(0, (System.getDeviceSettings().screenHeight - (System.getDeviceSettings().screenHeight/aspectRatio)) / 2 , sd.getWebcamImage1()); 
         } else if (prevResponseCode == 200 ){
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, "Loading...", Graphics.TEXT_JUSTIFY_CENTER);
@@ -54,10 +54,8 @@ class Webcam1View extends WatchUi.View {
         System.println("Image request response: " + responseCode.toString());
         prevResponseCode = responseCode;
         if (responseCode == 200) {
-            webcamImage = data;
+            sd.setWebcamImage1(data);
             WatchUi.requestUpdate();        
-        } else {
-            webcamImage = null;
         }
     }
     
@@ -80,8 +78,11 @@ class Webcam1View extends WatchUi.View {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
+        sd = WeatherData.getWeatherData();
         WatchUi.requestUpdate();        
-        requestWebcamImage();
+        if (sd != null and sd.getWebcamImage1() == null) {
+            requestWebcamImage();
+        }
     }
 
     // Called when this View is removed from the screen. Save the

@@ -5,7 +5,8 @@ enum Align {
     ALIGN_BOTTOM_RIGHT,
     ALIGN_BOTTOM_LEFT,
     ALIGN_TOP_RIGHT,
-    ALIGN_TOP_LEFT
+    ALIGN_TOP_LEFT,
+    ALIGN_BOTTOM_CENTER
 }
 
 //! Draws a graphic indicating which page the user is currently on
@@ -17,13 +18,13 @@ class PageIndicator {
     private var _margin as Number;
 
     //! Constructor
-    //! @param size Number of pages
+    //! @param numPages Number of pages
     //! @param selectedColor Color to use for the selected page
     //! @param notSelectedColor Color to use for non-selected pages
     //! @param alignment How to align the graphic
     //! @param margin Amount of margin for the graphic
-    public function initialize(size as Number, selectedColor as ColorValue, notSelectedColor as ColorValue, alignment as Align, margin as Number) {
-        _size = size;
+    public function initialize(numPages as Number, selectedColor as ColorValue, notSelectedColor as ColorValue, alignment as Align, margin as Number) {
+        _size = numPages;
         _selectedColor = selectedColor;
         _notSelectedColor = notSelectedColor;
         _alignment = alignment;
@@ -51,6 +52,9 @@ class PageIndicator {
         } else if (_alignment == $.ALIGN_TOP_LEFT) {
             x = 0 + _margin;
             y = 0 + _margin + (height / 2);
+        } else if (_alignment == $.ALIGN_BOTTOM_CENTER) {
+            x = (dc.getWidth()/2) - (width/2);
+            y = dc.getHeight() - (height / 2) - _margin;
         } else {
             x = 0;
             y = 0;
@@ -63,8 +67,13 @@ class PageIndicator {
                 dc.setColor(_notSelectedColor, Graphics.COLOR_TRANSPARENT);
             }
 
-            var tempX = (x + (i * height)) + height / 2;
-            dc.fillCircle(tempX, y, height / 2);
+            var tempX = (x + (i * height * 2)) - ((_size-1) * (height / 2));
+            if (i == selectedIndex) {
+                dc.fillCircle(tempX, y, height / 2);
+            } else {
+                dc.drawCircle(tempX, y, height / 2);
+            }
+            System.println("circle: "+tempX.toString()+" "+y.toString());
         }
     }
 
