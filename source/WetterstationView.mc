@@ -2,13 +2,22 @@ import Toybox.Graphics;
 import Toybox.WatchUi;
 import Toybox.Timer;
 import Toybox.Math;
+import Toybox.Lang;
 
 class WetterstationView extends WatchUi.View {
     var sd = null;
     var refreshTimer = null;
 
-    function initialize() {
+    private var _indicator as PageIndicator;
+
+    public function initialize() {
         View.initialize();
+        var size = 2;
+        var selected = Graphics.COLOR_DK_GRAY;
+        var notSelected = Graphics.COLOR_LT_GRAY;
+        var alignment = $.ALIGN_TOP_RIGHT;
+        var margin = 10;
+        _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
     }
 
     // Load your resources here
@@ -94,15 +103,16 @@ class WetterstationView extends WatchUi.View {
             dc.fillPolygon(coord);
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             dc.drawText(System.getDeviceSettings().screenWidth / 2, System.getDeviceSettings().screenHeight - 56, Graphics.FONT_SYSTEM_TINY, sd.getCurTemperature()+" °C", Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
-            if (windgustkmh > windspeedkmh + 10.0) {
-                dc.drawText(System.getDeviceSettings().screenWidth / 2, 37, Graphics.FONT_SYSTEM_TINY, "Gust "+sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
-
+            dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, sd.getCurWindSpeed()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
+            if (windgustkmh > (windspeedkmh + 10.0)) {
+                dc.drawText(System.getDeviceSettings().screenWidth / 2, 40, Graphics.FONT_SYSTEM_TINY, "Gust "+sd.getCurWindGusts()+" km/h", Graphics.TEXT_JUSTIFY_CENTER);
             }
+            _indicator.draw(dc, 0);
 
         }
     }
 
+    
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
@@ -128,4 +138,25 @@ class WetterstationView extends WatchUi.View {
         }
     }
 
+}
+
+class WetterstationViewDelegate extends WatchUi.BehaviorDelegate {
+
+    public function initialize() {
+        BehaviorDelegate.initialize();
+    }
+
+    //! Handle going to the next view
+    //! @return true if handled, false otherwise
+    public function onNextPage() as Boolean {
+        WatchUi.switchToView(new $.Webcam1View(), new $.Webcam1ViewDelegate(), WatchUi.SLIDE_LEFT);
+        return true;
+    }
+
+    //! Handle going to the previous view
+    //! @return true if handled, false otherwise
+    public function onPreviousPage() as Boolean {
+        WatchUi.switchToView(new $.Webcam2View(), new $.Webcam2ViewDelegate(), WatchUi.SLIDE_RIGHT);
+        return true;
+    }
 }

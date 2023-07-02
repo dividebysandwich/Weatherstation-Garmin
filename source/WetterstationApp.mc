@@ -18,7 +18,7 @@ class WetterstationApp extends Application.AppBase {
 
     // Return the initial view of the application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new WetterstationView() ] as Array<Views or InputDelegates>;
+        return [ new WetterstationView(), new WetterstationViewDelegate() ] as Array<Views or InputDelegates>;
     }
 
     (:glance)

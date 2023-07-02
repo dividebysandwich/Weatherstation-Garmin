@@ -109,7 +109,7 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                 // Fill shaded area under the curve
                 var zoomFactor = 2.0;
                 if (System.getDeviceSettings().screenHeight > 416) {
-                    zoomFactor = 2.25;
+                    zoomFactor = 2.27;
                 }
                 for (var x = 0; x < histogram.size()*zoomFactor-dataoffset; x++) {
                     var alpha = 30 + (x/2);
