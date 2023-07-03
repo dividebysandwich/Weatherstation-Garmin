@@ -5,10 +5,7 @@ import Toybox.Math;
 import Toybox.Lang;
 
 class Webcam2View extends WatchUi.View {
-    var refreshTimer = null;
-    var prevResponseCode = 200;
-    var aspectRatio = 1.4;
-    var sd = null;
+    var wi = null;
 
     private var _indicator as PageIndicator;
 
@@ -22,13 +19,7 @@ class Webcam2View extends WatchUi.View {
         _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
     }
 
-    // Load your resources here
     function onLayout(dc as Dc) as Void {
-/*        if (System.getDeviceSettings().screenHeight == 360) {
-            setLayout(Rez.Layouts.MainLayout(dc));
-        } else if (System.getDeviceSettings().screenHeight == 416) {
-            setLayout(Rez.Layouts.MainLayout_Epix(dc));
-        }*/
     }
 
     // Update the view
@@ -36,52 +27,27 @@ class Webcam2View extends WatchUi.View {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
         System.println("webcam2 view onUpdate");
-        if (sd != null and sd.getWebcamImage2() != null) {
+        if (wi != null and wi.getWebcamImage2() != null) {
             // Draw the arrow
-            dc.drawBitmap(0, (System.getDeviceSettings().screenHeight - (System.getDeviceSettings().screenHeight/aspectRatio)) / 2 , sd.getWebcamImage2()); 
-        } else if (prevResponseCode == 200 ){
+            dc.drawBitmap(0, (System.getDeviceSettings().screenHeight - (System.getDeviceSettings().screenHeight/wi.getAspectRatio())) / 2 , wi.getWebcamImage2()); 
+        } else if (wi.getPrevResponseCode() == 200 or wi.getPrevResponseCode() == 101){
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, "Loading...", Graphics.TEXT_JUSTIFY_CENTER);
         } else {
             dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, "Error!", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, "Error "+wi.getPrevResponseCode().toString(), Graphics.TEXT_JUSTIFY_CENTER);
         }
         _indicator.draw(dc, 2);
-    }
-
-    
-    function imageResponseCallback2(responseCode as Number, data as Null or BitmapReference or BitmapResource) as Void {
-        System.println("Image request response: " + responseCode.toString());
-        prevResponseCode = responseCode;
-        if (responseCode == 200) {
-            sd.setWebcamImage2(data);
-            WatchUi.requestUpdate();        
-        }
-    }
-    
-    function requestWebcamImage() {
-        var url = "https://mc-boeheimkirchen.at/webcam2.php";
-        var parameters = null;
-        var options = {
-            :maxWidth => System.getDeviceSettings().screenWidth,
-            :maxHeight => (System.getDeviceSettings().screenHeight/aspectRatio).toNumber(),
-            :dithering => Communications.IMAGE_DITHERING_NONE,
-            :packingFormat => Communications.PACKING_FORMAT_JPG
-        };
-        System.println("Requesting webcam2 image...");
-
-        // Make the image request
-        Communications.makeImageRequest(url, parameters, options, self.method(:imageResponseCallback2));
     }
 
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
-        sd = WeatherData.getWeatherData();
+        wi = WebcamImage.getWebcamInstance();
         WatchUi.requestUpdate();
-        if (sd != null and (sd.getWebcamImage2() == null || sd.isWebcamImage2Current() == false)) {
-            requestWebcamImage();
+        if (wi != null and (wi.getWebcamImage2() == null || wi.isWebcamImageCurrent() == false)) {
+            wi.updateWebcamImages();
         }
     }
 
