@@ -14,8 +14,10 @@ class WeatherData {
     var mode = 5;
     var webcamImage1 = null;
     var webcamImage2 = null;
+    var webcamImage3 = null;
     var webcamImage1UpdateTime = 0;
     var webcamImage2UpdateTime = 0;
+    var webcamImage3UpdateTime = 0;
 
     function initialize() {
         // Get last data snapshot from application storage so we have something to show immediately on startup.
@@ -64,7 +66,7 @@ class WeatherData {
         WatchUi.requestUpdate();
     }
     protected function makeRequest() as Void {
-        var url = "https://167dgn.airforce/queryWeather";                         // set the url
+        var url = "https://hoxdna.org/queryWeather";                // set the url
 
         var params = {                                              // set the parameters
         };
@@ -143,6 +145,11 @@ class WeatherData {
         webcamImage2UpdateTime = Time.now().value();
     }
 
+    public function setWebcamImage3(image as Toybox.Graphics.BufferedBitmap?) {
+        webcamImage3 = image;
+        webcamImage3UpdateTime = Time.now().value();
+    }
+
 
     public function getWebcamImage1() as Toybox.Graphics.BufferedBitmap? {
         return webcamImage1;
@@ -161,6 +168,17 @@ class WeatherData {
 
     public function isWebcamImage2Current() as Boolean {
         if (Time.now().value() > webcamImage2UpdateTime + 300) {
+            return false;
+        }
+        return true;
+    }
+
+    public function getWebcamImage3() as Toybox.Graphics.BufferedBitmap? {
+        return webcamImage3;
+    }
+
+    public function isWebcamImage3Current() as Boolean {
+        if (Time.now().value() > webcamImage3UpdateTime + 300) {
             return false;
         }
         return true;

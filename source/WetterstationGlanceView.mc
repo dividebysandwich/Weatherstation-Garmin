@@ -46,13 +46,15 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                 bitmapDc.clear();
 
                 // Prepare data
-                var temperature = sd.getCurTemperature();
                 var curvalue = 0;
                 var histogram = null;
                 var linecolor = null;
                 var gridInterval = 500;
                 var maxValue = 0.1;
-                var minValue = 0;
+                var minValue = 0.0;
+                var dataoffset = 0;
+                var offset = 0;
+
                 if (mode <= 2) {
                     histogram = sd.getWindGustsHistogram();
                     linecolor = Graphics.COLOR_YELLOW;
@@ -68,83 +70,89 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                     curvalue = sd.getCurTemperature() + " °C";
                     gridInterval = 5;
                     maxValue = sd.getMaxValue(histogram);
-                    minValue = sd.getMinValue(histogram).abs();
-                    if (maxValue < minValue) {
-                        maxValue = minValue;
-                    }
+                    minValue = sd.getMinValue(histogram);
+                    
+                    // Ensure we have some padding and include 0 in the range
+                    if (maxValue < 5) { maxValue = 5.0; }
+                    if (minValue > -5) { minValue = -5.0; }
                 } else if (mode == 4) {
                     curvalue = sd.getCurRain() + " mm/m²";
                     histogram = sd.getRainHistogram();
                     linecolor = Graphics.COLOR_BLUE;
                     maxValue = sd.getMaxValue(histogram);
-                    if (maxValue < 1) {
-                        maxValue = 1.0;
-                    }
+                    if (maxValue < 1) { maxValue = 1.0; }
                     gridInterval = 1;
-                    //Only show the negative axis of the graph if there was energy flowing back to the grid
+                    minValue = 0;
                 }
 
-                if (maxValue == 0) {
-                    maxValue = 0.01;
-                }
+                var yOffset = 2;
+                var totalRange = (maxValue - minValue).toFloat();
+                if (totalRange == 0) { totalRange = 1.0; } 
+                
+                var chartAreaHeight = dc.getHeight() - (yOffset * 2);
 
                 //Draw the background grid lines
-                var offset = 0;
-                var dataoffset = 0;
            	    bitmapDc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_BLACK);
                 for (var a = gridInterval; a < maxValue; a+=gridInterval) {
                     var y = a.toFloat() / maxValue.toFloat() * (dc.getHeight() - 2);
                     bitmapDc.drawLine(offset, dc.getHeight() - 2 - y, dc.getWidth()-1, dc.getHeight() - 2 - y);
                 }
 
-                //Axis line
-           	    bitmapDc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
-      	        bitmapDc.drawLine(offset, dc.getHeight()-1, dc.getWidth(), dc.getHeight()-1);
-       	        bitmapDc.setFill(Graphics.createColor(30 , 255, 255, 255));
-                bitmapDc.setStroke(Graphics.createColor(30, 255, 255, 255));
-                for (var x = offset; x < dc.getWidth(); x+=20) {
-                    bitmapDc.drawLine(x, 0, x, dc.getHeight());
-                }
+                // Calculate the Y coordinate for the 0-degree line
+                // We use the ratio: (Value - Min) / TotalRange
+                var zeroY = (dc.getHeight() - yOffset) - ((0.0 - minValue) / totalRange * chartAreaHeight);
 
-                // Fill shaded area under the curve
+                // --- 2. Draw the Zero Line (The Axis) ---
+                bitmapDc.setPenWidth(1);
+                bitmapDc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
+                bitmapDc.drawLine(0, zeroY.toNumber(), dc.getWidth(), zeroY.toNumber());
+
+                // --- 3. Fill shaded area (Filling to zeroY) ---
                 var zoomFactor = 2.0;
-                if (System.getDeviceSettings().screenHeight > 416) {
-                    zoomFactor = 2.27;
-                }
-                for (var x = 0; x < histogram.size()*zoomFactor-dataoffset; x++) {
-                    var alpha = 30 + (x/2);
+                if (System.getDeviceSettings().screenHeight > 416) { zoomFactor = 2.27; }
+
+                for (var x = 0; x < (histogram.size() * zoomFactor) - dataoffset; x++) {
+                    var alpha = 30 + (x / 2);
+                    if (alpha > 90) { alpha = 90; }
+
+                    var val = histogram[((x + dataoffset) / zoomFactor).toNumber()].toFloat();
+                    // Map the temperature value to a screen Y coordinate
+                    var yVal = (dc.getHeight() - yOffset) - ((val - minValue) / totalRange * chartAreaHeight);
+                    
                     if (mode <= 2) {
                	        bitmapDc.setFill(Graphics.createColor(alpha, 255, 255, 0));
        	                bitmapDc.setStroke(Graphics.createColor(alpha, 255, 255, 0));
                     } else if (mode == 3) {
-               	        bitmapDc.setFill(Graphics.createColor(alpha, 0, 255, 0));
-       	                bitmapDc.setStroke(Graphics.createColor(alpha, 0, 255, 0));
+                        // Dynamic color: Blue for freezing, Green for warm
+                        if (val < 0) {
+                            bitmapDc.setStroke(Graphics.createColor(alpha, 0, 150, 255));
+                        } else {
+                            bitmapDc.setStroke(Graphics.createColor(alpha, 0, 255, 0));
+                        }
                     } else if (mode == 4) {
                	        bitmapDc.setFill(Graphics.createColor(alpha, 0, 0, 255));
        	                bitmapDc.setStroke(Graphics.createColor(alpha, 0, 0, 255));
                     }
-                    var height = histogram[((x+dataoffset)/zoomFactor).toNumber()].toFloat() / maxValue.toFloat() * (dc.getHeight().toFloat() - 2.0f);
-                    if (height < 0) {
-                        height = 0;
-                    }
-                    bitmapDc.drawLine(x+1+offset, dc.getHeight()-1-height.toNumber(), x+1+offset, dc.getHeight()-1);
+
+                    // DRAWING THE FILL: Vertical line from the curve point to the Zero Line
+                    bitmapDc.drawLine(x + offset, yVal.toNumber(), x + offset, zeroY.toNumber());
                 }
 
-                // Draw the curve itself
+                // --- 4. Re-draw Zero Line on top of fill for clarity ---
+                bitmapDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+                bitmapDc.drawLine(0, zeroY.toNumber(), dc.getWidth(), zeroY.toNumber());
+
+                // --- 5. Draw the Curve Line ---
                 bitmapDc.setPenWidth(2);
-        	    bitmapDc.setColor(linecolor, Graphics.COLOR_BLACK);
-
-                for (var x = 1; x < histogram.size()*zoomFactor-dataoffset; x+=2) {
-                    var heightprev = histogram[((x+dataoffset-2)/zoomFactor).toNumber()].toFloat() / maxValue.toFloat() * (dc.getHeight().toFloat() - 2.0f);
-                    var height = histogram[((x+dataoffset)/zoomFactor).toNumber()].toFloat() / maxValue.toFloat() * dc.getHeight().toFloat() - 2.0f;
-                    if (heightprev < 0) {
-                        heightprev = 0;
-                    }
-                    if (height < 0) {
-                        height = 0;
-                    }
-                    bitmapDc.drawLine(x+offset, dc.getHeight()-1-heightprev.toNumber(), x+1+offset, dc.getHeight()-1-height.toNumber());
-
+                bitmapDc.setColor(linecolor, Graphics.COLOR_BLACK);
+                for (var x = 2; x < (histogram.size() * zoomFactor) - dataoffset; x += 2) {
+                    var valPrev = histogram[((x + dataoffset - 2) / zoomFactor).toNumber()].toFloat();
+                    var valCurr = histogram[((x + dataoffset) / zoomFactor).toNumber()].toFloat();
+                    
+                    var yPrev = (dc.getHeight() - yOffset) - ((valPrev - minValue) / totalRange * chartAreaHeight);
+                    var yCurr = (dc.getHeight() - yOffset) - ((valCurr - minValue) / totalRange * chartAreaHeight);
+                    
+                    bitmapDc.drawLine(x + offset - 2, yPrev.toNumber(), x + offset, yCurr.toNumber());
                 }
 
                 var dim = bitmapDc.getTextDimensions(curvalue, Graphics.FONT_SYSTEM_TINY);
@@ -157,14 +165,6 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                 bitmapDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
                 bitmapDc.drawText(18, 58, Graphics.FONT_SYSTEM_TINY, curvalue, Graphics.TEXT_JUSTIFY_LEFT);
 //                bitmapDc.drawText(dc.getWidth()-5, 66, Graphics.FONT_SYSTEM_XTINY, curvalue, Graphics.TEXT_JUSTIFY_RIGHT);
-
-                // Battery SOC bar
-/*                for (var y = dc.getHeight(); y > dc.getHeight() - (soc.toFloat()/100.0f * dc.getHeight()); y-=1) {
-                    var alpha = 255 - y + 180;
-                    bitmapDc.setFill(Graphics.createColor(alpha, 0, 0, 255));
-                    bitmapDc.setStroke(Graphics.createColor(alpha, 0, 0, 255));
-                    bitmapDc.drawLine(0, y, 10, y);
-                }*/
 
                 // Cache image so we don't redraw all the time
                 sd.setGlanceBitmap(bitmap);

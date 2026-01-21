@@ -161,7 +161,7 @@ class WetterstationViewDelegate extends WatchUi.BehaviorDelegate {
     //! Handle going to the previous view
     //! @return true if handled, false otherwise
     public function onPreviousPage() as Boolean {
-        WatchUi.switchToView(new $.Webcam2View(), new $.Webcam2ViewDelegate(), WatchUi.SLIDE_RIGHT);
+        WatchUi.switchToView(new $.Webcam3View(), new $.Webcam3ViewDelegate(), WatchUi.SLIDE_RIGHT);
         return true;
     }
 }
