@@ -71,6 +71,7 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                     gridInterval = 5;
                     maxValue = sd.getMaxValue(histogram);
                     minValue = sd.getMinValue(histogram);
+                    if (minValue < 3) { gridInterval = 1; }
                     
                     // Ensure we have some padding and include 0 in the range
                     if (maxValue < 5) { maxValue = 5.0; }
@@ -91,29 +92,40 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                 
                 var chartAreaHeight = dc.getHeight() - (yOffset * 2);
 
-                //Draw the background grid lines
+                // Draw the background grid lines
            	    bitmapDc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_BLACK);
-                for (var a = gridInterval; a < maxValue; a+=gridInterval) {
-                    var y = a.toFloat() / maxValue.toFloat() * (dc.getHeight() - 2);
-                    bitmapDc.drawLine(offset, dc.getHeight() - 2 - y, dc.getWidth()-1, dc.getHeight() - 2 - y);
-                }
 
+                // Find the starting point: the first multiple of gridInterval below or at minValue
+                var startGrid = (minValue / gridInterval).toNumber() * gridInterval;
+
+                // Loop from that start point up to maxValue
+                for (var a = startGrid; a <= maxValue; a += gridInterval) {
+    
+                // Skip drawing the grid line if it is exactly at 0 (we draw the Zero Line separately)
+                if (a == 0) { continue; }
+
+                // Map the value 'a' to the screen Y coordinate using the same formula as the graph
+                var yPos = (dc.getHeight() - yOffset) - ((a - minValue) / totalRange * chartAreaHeight);
+
+                // Draw the horizontal grid line
+                bitmapDc.drawLine(offset, yPos.toNumber(), dc.getWidth() - 1, yPos.toNumber());
+}
                 // Calculate the Y coordinate for the 0-degree line
                 // We use the ratio: (Value - Min) / TotalRange
                 var zeroY = (dc.getHeight() - yOffset) - ((0.0 - minValue) / totalRange * chartAreaHeight);
 
-                // --- 2. Draw the Zero Line (The Axis) ---
+                // Draw the Zero Line (The Axis)
                 bitmapDc.setPenWidth(1);
                 bitmapDc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
                 bitmapDc.drawLine(0, zeroY.toNumber(), dc.getWidth(), zeroY.toNumber());
 
-                // --- 3. Fill shaded area (Filling to zeroY) ---
+                // Fill shaded area (Filling to zeroY)
                 var zoomFactor = 2.0;
                 if (System.getDeviceSettings().screenHeight > 416) { zoomFactor = 2.27; }
 
                 for (var x = 0; x < (histogram.size() * zoomFactor) - dataoffset; x++) {
-                    var alpha = 30 + (x / 2);
-                    if (alpha > 90) { alpha = 90; }
+                    var alpha = (x / 3);
+                    if (alpha > 120) { alpha = 120; }
 
                     var val = histogram[((x + dataoffset) / zoomFactor).toNumber()].toFloat();
                     // Map the temperature value to a screen Y coordinate
@@ -138,11 +150,11 @@ class WetterstationGlanceView extends WatchUi.GlanceView {
                     bitmapDc.drawLine(x + offset, yVal.toNumber(), x + offset, zeroY.toNumber());
                 }
 
-                // --- 4. Re-draw Zero Line on top of fill for clarity ---
+                // Re-draw Zero Line on top of fill for clarity
                 bitmapDc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
                 bitmapDc.drawLine(0, zeroY.toNumber(), dc.getWidth(), zeroY.toNumber());
 
-                // --- 5. Draw the Curve Line ---
+                // Draw the Curve Line
                 bitmapDc.setPenWidth(2);
                 bitmapDc.setColor(linecolor, Graphics.COLOR_BLACK);
                 for (var x = 2; x < (histogram.size() * zoomFactor) - dataoffset; x += 2) {
