@@ -37,7 +37,7 @@ class Webcam3View extends WatchUi.View {
             dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
             dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, "Error "+wi.getPrevResponseCode().toString(), Graphics.TEXT_JUSTIFY_CENTER);
         }
-        _indicator.draw(dc, 2);
+        _indicator.draw(dc, 3);
     }
 
     // Called when this View is brought to the foreground. Restore
