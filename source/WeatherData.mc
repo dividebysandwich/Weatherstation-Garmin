@@ -116,6 +116,9 @@ class WeatherData {
     public function getWindGustsHistogram() {
         return lastData.get("windgusts");
     }
+    public function getWindDirs() {
+        return lastData.get("winddirs");
+    }
     public function getRainHistogram() {
         return lastData.get("rain");
     }

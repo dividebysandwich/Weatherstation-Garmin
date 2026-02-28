@@ -11,7 +11,7 @@ class Webcam3View extends WatchUi.View {
 
     public function initialize() {
         View.initialize();
-        var size = 3;
+        var size = 4;
         var notSelected = Graphics.COLOR_DK_GRAY;
         var selected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_BOTTOM_CENTER;
