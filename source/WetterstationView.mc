@@ -71,7 +71,14 @@ class WetterstationView extends WatchUi.View {
                     var heatmapColor = Graphics.createColor(105, 0, 173, 181); 
                     dc.setColor(heatmapColor, Graphics.COLOR_TRANSPARENT);
 
-                    for (var i = 0; i < windDirs.size(); i++) {
+                    // 15 minutes * 2 updates/minute = 30 data points maximum
+                    var numPoints = 30;
+                    var startIndex = windDirs.size() - numPoints;
+                    if (startIndex < 0) {
+                        startIndex = 0; // Prevent out-of-bounds if array has fewer than 30 items
+                    }
+
+                    for (var i = startIndex; i < windDirs.size(); i++) {
                         var dir = windDirs[i].toFloat();
                         var startAngle = 90.0 - (dir + 5.0);
                         var endAngle = 90.0 - (dir - 5.0);
