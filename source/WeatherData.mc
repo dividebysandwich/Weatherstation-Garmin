@@ -11,6 +11,8 @@ class WeatherData {
     var view;
     var glanceBitmap = null;
     var forceRefreshOnReload = false;
+    var forecastData = null;
+    var lastForecastUpdateTime = 0;
     var mode = 5;
     var webcamImage1 = null;
     var webcamImage2 = null;
@@ -24,8 +26,10 @@ class WeatherData {
         // It will be updated once the HTTP request finishes.
         lastData = Storage.getValue("lastStationData");
         lastUpdateTime = Storage.getValue("lastWeatherDataTime");
+        forecastData = Storage.getValue("lastForecastData");
         forceRefreshOnReload = true; // Make the widget redraw immediately when the first data fetch succeeds.
         makeRequest();
+        makeForecastRequest();
     }
 
     function setMode(m) {
@@ -58,9 +62,27 @@ class WeatherData {
         WatchUi.requestUpdate();
     }
 
+    function onForecastReceive(responseCode as Number, data as Dictionary or String or Null) as Void {
+        if (responseCode == 200) {
+            System.println("Forecast Request Successful");
+            if (data != null && !data.isEmpty()) {
+                lastForecastUpdateTime = Time.now().value();
+                forecastData = data;
+                Storage.setValue("lastForecastData", forecastData);
+                glanceBitmap = null;
+                WatchUi.requestUpdate();
+            }
+        } else {
+            System.println("Forecast Response: " + responseCode);
+        }
+    }
+
     public function requestUpdate() as Void{
         if (Time.now().value() > lastUpdateTime + 20) {
             makeRequest();
+        }
+        if (Time.now().value() > lastForecastUpdateTime + 300) {
+            makeForecastRequest();
         }
         glanceBitmap = null;
         WatchUi.requestUpdate();
@@ -81,6 +103,19 @@ class WeatherData {
 
         // Make the Communications.makeWebRequest() call
         Communications.makeWebRequest(url, params, options, method(:onReceive));
+    }
+
+    protected function makeForecastRequest() as Void {
+        var url = "https://hoxdna.org/forecast";
+        var params = {};
+        var options = {
+            :method => Communications.HTTP_REQUEST_METHOD_GET,
+            :headers => {
+                "Content-Type" => Communications.REQUEST_CONTENT_TYPE_URL_ENCODED
+            },
+            :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
+        };
+        Communications.makeWebRequest(url, params, options, method(:onForecastReceive));
     }
 
     public function getData() as Dictionary? {
@@ -129,6 +164,30 @@ class WeatherData {
         return lastData.get("solarradiation");
     }*/
 
+    public function getForecastTemperature() {
+        if (forecastData == null) { return null; }
+        var hourly = forecastData.get("hourly");
+        if (hourly == null) { return null; }
+        return hourly.get("temperature_2m");
+    }
+    public function getForecastPrecipitation() {
+        if (forecastData == null) { return null; }
+        var hourly = forecastData.get("hourly");
+        if (hourly == null) { return null; }
+        return hourly.get("precipitation");
+    }
+    public function getForecastWindGusts() {
+        if (forecastData == null) { return null; }
+        var hourly = forecastData.get("hourly");
+        if (hourly == null) { return null; }
+        return hourly.get("wind_gusts_10m");
+    }
+    public function getForecastWindSpeed() {
+        if (forecastData == null) { return null; }
+        var hourly = forecastData.get("hourly");
+        if (hourly == null) { return null; }
+        return hourly.get("wind_speed_10m");
+    }
 
     public function getGlanceBitmap() as Toybox.Graphics.BufferedBitmap? {
         return glanceBitmap;
