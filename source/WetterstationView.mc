@@ -12,7 +12,7 @@ class WetterstationView extends WatchUi.View {
 
     public function initialize() {
         View.initialize();
-        var size = 4;
+        var size = 5;
         var notSelected = Graphics.COLOR_DK_GRAY;
         var selected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_BOTTOM_CENTER;
@@ -216,7 +216,7 @@ class WetterstationViewDelegate extends WatchUi.BehaviorDelegate {
     }
 
     public function onNextPage() as Boolean {
-        WatchUi.switchToView(new $.Webcam1View(), new $.Webcam1ViewDelegate(), WatchUi.SLIDE_LEFT);
+        WatchUi.switchToView(new $.WetterstationAdsbView(), new $.WetterstationAdsbViewDelegate(), WatchUi.SLIDE_LEFT);
         return true;
     }
 

@@ -11,7 +11,7 @@ class Webcam1View extends WatchUi.View {
 
     public function initialize() {
         View.initialize();
-        var size = 4;
+        var size = 5;
         var notSelected = Graphics.COLOR_DK_GRAY;
         var selected = Graphics.COLOR_LT_GRAY;
         var alignment = $.ALIGN_BOTTOM_CENTER;
@@ -37,7 +37,7 @@ class Webcam1View extends WatchUi.View {
             dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
             dc.drawText(System.getDeviceSettings().screenWidth / 2, 10, Graphics.FONT_SYSTEM_TINY, "Error "+wi.getPrevResponseCode().toString(), Graphics.TEXT_JUSTIFY_CENTER);
         }
-        _indicator.draw(dc, 1);
+        _indicator.draw(dc, 2);
     }
     
     // Called when this View is brought to the foreground. Restore
@@ -76,7 +76,7 @@ class Webcam1ViewDelegate extends WatchUi.BehaviorDelegate {
     //! Handle going to the previous view
     //! @return true if handled, false otherwise
     public function onPreviousPage() as Boolean {
-        WatchUi.switchToView(new $.WetterstationView(), new $.WetterstationViewDelegate(), WatchUi.SLIDE_RIGHT);
+        WatchUi.switchToView(new $.WetterstationAdsbView(), new $.WetterstationAdsbViewDelegate(), WatchUi.SLIDE_RIGHT);
         return true;
     }
 }
