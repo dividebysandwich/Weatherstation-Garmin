@@ -229,11 +229,9 @@ class WetterstationAdsbView extends WatchUi.View {
         if (alt == null) { return Graphics.COLOR_LT_GRAY; }
         if (alt instanceof String) { return Graphics.COLOR_DK_GREEN; }
         var a = alt.toFloat();
-        if (a < 1000) { return Graphics.COLOR_GREEN; }
-        if (a < 5000) { return Graphics.COLOR_YELLOW; }
-        if (a < 10000) { return Graphics.COLOR_ORANGE; }
-        if (a < 25000) { return Graphics.COLOR_WHITE; }
-        return Graphics.COLOR_BLUE;
+        if (a < 2000) { return Graphics.COLOR_YELLOW; }
+        if (a < 5000) { return Graphics.COLOR_BLUE; }
+        return Graphics.COLOR_WHITE;
     }
 
     function trimSpaces(s as String) as String {

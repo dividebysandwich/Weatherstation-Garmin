@@ -139,8 +139,8 @@ class WetterstationView extends WatchUi.View {
                 dc.drawLine(rotatedCoords[i][0], rotatedCoords[i][1], rotatedCoords[next][0], rotatedCoords[next][1]);
             }
 
-            // Bottom Dashboard Box for Wind Speed and Temperature
-            var speedStr = sd.getCurWindSpeed() + " km/h";
+            // Bottom Dashboard Box: gusts as the primary wind reading
+            var speedStr = sd.getCurWindGusts() + " km/h";
             var tempStr = sd.getCurTemperature() + " °C";
             var fontSpd = Graphics.FONT_SYSTEM_SMALL;
             var fontTmp = Graphics.FONT_SYSTEM_XTINY;
@@ -165,20 +165,19 @@ class WetterstationView extends WatchUi.View {
             dc.setColor(Graphics.createColor(255, 180, 180, 180), Graphics.COLOR_TRANSPARENT); // Light gray for temp
             dc.drawText(cx, boxCenterY - boxH/2 + spdH - (6 * scaleFactor), fontTmp, tempStr, Graphics.TEXT_JUSTIFY_CENTER);
 
-            // Gust Warning (Dynamic overlay if gusts are high)
-            if (windgustkmh > (windspeedkmh + 10.0)) {
-                var gustStr = "Gust " + sd.getCurWindGusts() + " km/h";
+            // Average overlay (only when gusts noticeably exceed the average)
+            if ((windgustkmh - windspeedkmh) > 15.0) {
+                var avgStr = "Avg " + sd.getCurWindSpeed() + " km/h";
                 var gFont = Graphics.FONT_SYSTEM_XTINY;
-                var gw = dc.getTextWidthInPixels(gustStr, gFont) + 16;
+                var gw = dc.getTextWidthInPixels(avgStr, gFont) + 16;
                 var gh = dc.getFontHeight(gFont) + 4;
-                var gy = boxCenterY - boxH/2 - gh - (4 * scaleFactor); // Positioned just above the dashboard box
-                
-                // Slightly more opaque background for the warning
-                dc.setColor(Graphics.createColor(180, 24, 24, 28), Graphics.COLOR_TRANSPARENT);
+                var gy = boxCenterY - boxH/2 - gh - (4 * scaleFactor);
+
+                dc.setColor(Graphics.createColor(160, 24, 24, 28), Graphics.COLOR_TRANSPARENT);
                 dc.fillRoundedRectangle(cx - gw/2, gy, gw, gh, 6);
-                
-                dc.setColor(Graphics.createColor(255, 255, 46, 99), Graphics.COLOR_TRANSPARENT); // Neon Pink/Red
-                dc.drawText(cx, gy + 2, gFont, gustStr, Graphics.TEXT_JUSTIFY_CENTER);
+
+                dc.setColor(Graphics.createColor(255, 200, 200, 210), Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, gy + 2, gFont, avgStr, Graphics.TEXT_JUSTIFY_CENTER);
             }
 
             _indicator.draw(dc, 0);
