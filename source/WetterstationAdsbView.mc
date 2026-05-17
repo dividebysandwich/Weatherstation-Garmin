@@ -10,6 +10,7 @@ class WetterstationAdsbView extends WatchUi.View {
     var refreshTimer = null;
     var alertBlinkState = false;
     var tickCounter = 0;
+    var labelFont = null;
 
     private var _indicator as PageIndicator;
 
@@ -21,6 +22,7 @@ class WetterstationAdsbView extends WatchUi.View {
         var alignment = $.ALIGN_BOTTOM_CENTER;
         var margin = 3;
         _indicator = new $.PageIndicator(size, selected, notSelected, alignment, margin);
+        labelFont = WatchUi.loadResource(Rez.Fonts.LabelFont);
     }
 
     function onLayout(dc as Dc) as Void {
@@ -190,7 +192,6 @@ class WetterstationAdsbView extends WatchUi.View {
                     }
                 }
                 if (lines.size() > 0) {
-                    var labelFont = Graphics.FONT_XTINY;
                     var lineH = dc.getFontHeight(labelFont);
                     var maxWidth = 0;
                     for (var li = 0; li < lines.size(); li++) {
@@ -214,7 +215,7 @@ class WetterstationAdsbView extends WatchUi.View {
         var total = snapshot.get("total");
         var footer = (total != null ? total.toString() : "?") + " AC / " +
             displayRangeNm.format("%.0f") + "nm";
-        dc.setColor(Graphics.createColor(160, 0, 0, 0), Graphics.COLOR_TRANSPARENT);
+        dc.setColor(Graphics.createColor(100, 0, 0, 0), Graphics.COLOR_TRANSPARENT);
         var fdim = dc.getTextDimensions(footer, fontDir);
         var footerY = cy + radius * 0.6;
         dc.fillRectangle(cx - fdim[0] / 2 - 3, footerY, fdim[0] + 6, fdim[1]);
