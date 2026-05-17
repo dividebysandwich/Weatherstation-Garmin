@@ -174,19 +174,37 @@ class WetterstationAdsbView extends WatchUi.View {
                     dc.drawCircle(pos[0], pos[1], 8 * scaleFactor);
                 }
 
-                // Callsign label
+                // Label: callsign on line 1, alert details on line 2 (when alerting)
+                var lines = [];
                 var flight = ac.get("flight");
                 if (flight != null) {
                     var label = trimSpaces(flight.toString());
-                    if (label.length() > 0) {
-                        var labelFont = Graphics.FONT_XTINY;
-                        var dim = dc.getTextDimensions(label, labelFont);
-                        var lx = pos[0] + 5 * scaleFactor;
-                        var ly = pos[1] - dim[1] / 2;
-                        dc.setColor(labelBg, Graphics.COLOR_TRANSPARENT);
-                        dc.fillRectangle(lx, ly, dim[0], dim[1]);
-                        dc.setColor(labelColor, Graphics.COLOR_TRANSPARENT);
-                        dc.drawText(lx, ly, labelFont, label, Graphics.TEXT_JUSTIFY_LEFT);
+                    if (label.length() > 0) { lines.add(label); }
+                }
+                if (alert != null) {
+                    var eta = alert.get("eta_s");
+                    var minD = alert.get("min_distance_m");
+                    if (eta != null && minD != null) {
+                        lines.add(eta.toFloat().format("%.0f") + "s/" +
+                            minD.toFloat().format("%.0f") + "m");
+                    }
+                }
+                if (lines.size() > 0) {
+                    var labelFont = Graphics.FONT_XTINY;
+                    var lineH = dc.getFontHeight(labelFont);
+                    var maxWidth = 0;
+                    for (var li = 0; li < lines.size(); li++) {
+                        var w = dc.getTextWidthInPixels(lines[li], labelFont);
+                        if (w > maxWidth) { maxWidth = w; }
+                    }
+                    var totalH = lineH * lines.size();
+                    var lx = pos[0] + 14 * scaleFactor;
+                    var ly = pos[1] - totalH / 2;
+                    dc.setColor(labelBg, Graphics.COLOR_TRANSPARENT);
+                    dc.fillRectangle(lx, ly, maxWidth, totalH);
+                    dc.setColor(labelColor, Graphics.COLOR_TRANSPARENT);
+                    for (var li = 0; li < lines.size(); li++) {
+                        dc.drawText(lx, ly + li * lineH, labelFont, lines[li], Graphics.TEXT_JUSTIFY_LEFT);
                     }
                 }
             }
